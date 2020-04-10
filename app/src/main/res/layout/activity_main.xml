@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
+    android:background="@color/white"
+
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -19,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Welcome to your Notebook"
-            android:textColor="#2BA32E"
+            android:textColor="@color/colorAccent"
             android:textSize="15sp"
             android:fontFamily="sans-serif-light"
             android:gravity="center_horizontal" />

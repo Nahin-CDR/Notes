@@ -5,7 +5,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.ColorFilter;
@@ -40,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
     private Button verifyButton;
 
     String identity="";
+    String mobile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,10 +78,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String mobile = numberPhone.getText().toString().trim();
-
-
                     if(isNetworkConnected()==true)
                     {
+                        SharedPreferences sharedPreferences = getSharedPreferences( "userPhoneNumberKey", Context.MODE_PRIVATE );
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString( "userPhoneNumberKey",mobile );
+                        editor.commit();
+
                         Intent intent = new Intent(MainActivity.this,OTPActivity.class);
                         intent.putExtra("Mobile",mobile);
                         startActivity(intent);
@@ -88,16 +94,12 @@ public class MainActivity extends AppCompatActivity {
                     else {
                         Toast.makeText( MainActivity.this, "No internet!", Toast.LENGTH_SHORT ).show();
                     }
-
-
-
-
             }
         });
         checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                String mobile = numberPhone.getText().toString().trim();
+                mobile = numberPhone.getText().toString().trim();
                 int length = numberPhone.length();
                 if (b==true && correctNumber == true){
                     flag = true;
@@ -131,22 +133,24 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                String mobile = numberPhone.getText().toString().trim();
-                int length = numberPhone.length();
+                 mobile = numberPhone.getText().toString().trim();
+                 int length = numberPhone.length();
 
                  if(length==11)
                  {
                      identity = mobile.substring( 0,3 );
                      if(identity.contains( "017" ) || identity.contains( "016" )
-                             || identity.contains( "018" ) || identity.contains( "019" ) || identity.contains( "013" )
+                             || identity.contains( "018" ) || identity.contains( "019" ) || identity.contains( "013" ) || identity.contains("015")
                      )
                      {
                          numberPhone.setTextColor(Color.parseColor("#03A109"));
                          numberPhone.setBackground(getDrawable(R.drawable.edit_text_background_green));
-
                          correctNumber = true;
-
                          verify.setEnabled(!mobile.isEmpty() && length == 11 && flag == true);
+                         //taking valid number to shared preference
+
+
+
 
                      }else
                      {
