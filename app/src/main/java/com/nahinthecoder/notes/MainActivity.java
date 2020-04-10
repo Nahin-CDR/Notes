@@ -1,8 +1,16 @@
 package com.nahinthecoder.notes;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.ColorFilter;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.text.Editable;
@@ -97,13 +105,36 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
+
+
+
+
+                //code
+
+
+
+
+
+
+
             }
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 String mobile = numberPhone.getText().toString().trim();
                 int length = numberPhone.length();
-                if (checkBox.isChecked()){
+
+                 if(length==11)
+                 {
+                     numberPhone.setTextColor(Color.parseColor("#03A109"));
+                     numberPhone.setBackground(getDrawable(R.drawable.edit_text_background_green));  //if right input is given by user
+                 }
+                 else{
+                     numberPhone.setTextColor(Color.parseColor("#FF0000"));
+                     numberPhone.setBackground(getDrawable(R.drawable.edit_text_background)); // if wrong input is given by user
+                 }
+
+                if(checkBox.isChecked()){
                     checkBox.setChecked(false);
                 }
                 verify.setEnabled(!mobile.isEmpty() && length == 11 && flag == true);

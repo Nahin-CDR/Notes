@@ -1,15 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 
+
     <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
+
+
     <item android:state_active="true"
-        android:drawable="@color/colorAccent"
-        />
-    <item android:state_enabled="false"
-        android:drawable="@color/colorAccent2"/>
-    <item android:state_enabled="true"
-        android:drawable="@color/colorAccent"
-        />
+        android:drawable="@color/colorAccent"/>
+
+
+
+
+    <item android:state_enabled="false">
+    <shape android:shape="rectangle">
+        <gradient android:angle="225" android:endColor="@color/white" android:startColor="@color/white" />
+        <corners android:radius="10dp" />
+        <stroke android:width="1dp" android:color="@color/colorAccent2" />
+    </shape>
+        </item>
+
+
+
+    <item android:state_enabled="true">
+        <shape android:shape="rectangle">
+            <gradient android:angle="225" android:endColor="@color/white" android:startColor="@color/colorAccent" />
+            <corners android:radius="10dp"/>
+            <stroke android:width="1dp" android:color="@color/colorAccent" />
+        </shape>
+
+    </item>
+
+
 
 
 </selector>
