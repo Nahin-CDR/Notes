@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1085101644238",
+    "firebase_url": "https://notes-60b01.firebaseio.com",
+    "project_id": "notes-60b01",
+    "storage_bucket": "notes-60b01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1085101644238:android:e3b53412a0aa91ba26739f",
+        "android_client_info": {
+          "package_name": "com.nahinthecoder.notes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1085101644238-6j625kburopt7sicqu4357jjtv0e7fsq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvQt8zir89eg-3-y4KjtqadVA0jnC-xrk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1085101644238-6j625kburopt7sicqu4357jjtv0e7fsq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:context=".OTPActivity">
+
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="wrap_content"
+        android:src="@drawable/wife"
+        android:layout_height="100dp"/>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:id="@+id/verify_progressBar"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/vertext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/verImage"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:hint="@string/verification"
+            android:textAlignment="center"
+            android:textColor="#020000"
+            android:textSize="12sp" />
+        <TextView
+            android:id="@+id/text_view_countdown"
+            android:layout_width="70dp"
+            android:layout_height="35dp"
+            android:layout_below="@id/vertext"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:gravity="center_vertical"
+            android:text="00.30"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent"
+            android:textSize="15dp"
+            tools:ignore="RtlCompat" />
+        <EditText
+            android:id="@+id/verCodeID"
+            android:layout_width="170dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/text_view_countdown"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/edit_text_background_green"
+            android:inputType="number"
+            android:paddingLeft="5dp"
+            android:maxLength="6"
+            android:textAlignment="center"
+            android:textColor="@color/colorAccent"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/signin_buttonID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/verCodeID"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/defult_button"
+        android:text="SignIn"
+        android:textColor="#fff"
+        android:textSize="16dp" />
+
+    <Button
+        android:id="@+id/resend_buttonID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/signin_buttonID"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/defult_button"
+        android:text="Resend Code"
+        android:textColor="#fff"
+        android:textSize="16dp"
+        android:visibility="gone" />
+
+
+</LinearLayout>

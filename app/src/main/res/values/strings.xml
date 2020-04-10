@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Notes</string>
+    <string name="agree_text">I am agree to store my
+        notes in the cloud</string>
+    <string name="verification">
+        A verification code has been sent to your phone.Please check it and enter here.
+        Some times it may take 1 or 2 minutes to arrive .You should wait on that case.
+    </string>
+</resources>

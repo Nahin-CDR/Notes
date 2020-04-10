@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:textAlignment="center"
+            android:id="@+id/t1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Welcome to your Notebook"
+            android:textColor="#2BA32E"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:gravity="center_horizontal" />
+
+        <TextView
+            android:textAlignment="center"
+            android:id="@+id/t2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/t1"
+            android:text="Give your number to make your unique ID"
+            android:textColor="#A17C4E"
+            android:textSize="10sp"
+            android:gravity="center_horizontal" />
+
+        <LinearLayout
+            android:gravity="center"
+            android:id="@+id/l1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/t2"
+            android:layout_marginTop="85dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:scaleType="center"
+                android:src="@drawable/bd" />
+
+            <TextView
+                android:layout_width="41dp"
+                android:layout_height="42dp"
+                android:layout_marginLeft="5dp"
+                android:gravity="center_vertical"
+                android:text="+88"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:paddingLeft="5dp"
+                android:textColor="#055807"
+                android:id="@+id/mobile_number_ID"
+                android:background="@drawable/edit_text_background"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:fontFamily="sans-serif"
+                android:textSize="18sp"
+                android:maxLength="11"
+                android:inputType="number" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/l2"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/l1"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:checked="false"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:text="@string/agree_text" />
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/verify_button_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/l2"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/defult_button"
+            android:enabled="false"
+            android:text="Verify Mobile Number"
+            android:textAllCaps="false"
+            android:textColor="#fff"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</RelativeLayout>
