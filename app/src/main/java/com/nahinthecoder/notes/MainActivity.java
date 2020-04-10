@@ -34,9 +34,12 @@ public class MainActivity extends AppCompatActivity {
     private EditText numberPhone;
     private Button verify;
     boolean flag = false;
+    boolean correctNumber;
     FirebaseAuth mAuth;
 
     private Button verifyButton;
+
+    String identity="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,15 +76,21 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String mobile = numberPhone.getText().toString().trim();
 
-                if(isNetworkConnected()==true)
-                {
-                    Intent intent = new Intent(MainActivity.this,OTPActivity.class);
-                    intent.putExtra("Mobile",mobile);
-                    startActivity(intent);
-                    overridePendingTransition(R.anim.slider_1,R.anim.slider_2);
-                    finish();  }else {
-                    Toast.makeText( MainActivity.this, "No internet!", Toast.LENGTH_SHORT ).show();
-                }
+
+                    if(isNetworkConnected()==true)
+                    {
+                        Intent intent = new Intent(MainActivity.this,OTPActivity.class);
+                        intent.putExtra("Mobile",mobile);
+                        startActivity(intent);
+                        overridePendingTransition(R.anim.slider_1,R.anim.slider_2);
+                        finish();
+                    }
+                    else {
+                        Toast.makeText( MainActivity.this, "No internet!", Toast.LENGTH_SHORT ).show();
+                    }
+
+
+
 
             }
         });
@@ -90,12 +99,13 @@ public class MainActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 String mobile = numberPhone.getText().toString().trim();
                 int length = numberPhone.length();
-                if (b){
+                if (b==true && correctNumber == true){
                     flag = true;
                     verify.setEnabled(!mobile.isEmpty() && length == 11 && flag == true);
                 }else {
                     verify.setEnabled(false);
                     flag = false;
+
                 }
                 flag = false;
             }
@@ -126,18 +136,39 @@ public class MainActivity extends AppCompatActivity {
 
                  if(length==11)
                  {
-                     numberPhone.setTextColor(Color.parseColor("#03A109"));
-                     numberPhone.setBackground(getDrawable(R.drawable.edit_text_background_green));  //if right input is given by user
+                     identity = mobile.substring( 0,3 );
+                     if(identity.contains( "017" ) || identity.contains( "016" )
+                             || identity.contains( "018" ) || identity.contains( "019" ) || identity.contains( "013" )
+                     )
+                     {
+                         numberPhone.setTextColor(Color.parseColor("#03A109"));
+                         numberPhone.setBackground(getDrawable(R.drawable.edit_text_background_green));
+
+                         correctNumber = true;
+
+                         verify.setEnabled(!mobile.isEmpty() && length == 11 && flag == true);
+
+                     }else
+                     {
+                         numberPhone.setTextColor(Color.parseColor("#FF0000"));
+                         numberPhone.setBackground(getDrawable(R.drawable.edit_text_background)); // if wrong input is given by user
+                         correctNumber = false;
+
+                     }
+
                  }
                  else{
                      numberPhone.setTextColor(Color.parseColor("#FF0000"));
                      numberPhone.setBackground(getDrawable(R.drawable.edit_text_background)); // if wrong input is given by user
+                     correctNumber = false;
+
                  }
 
                 if(checkBox.isChecked()){
                     checkBox.setChecked(false);
                 }
-                verify.setEnabled(!mobile.isEmpty() && length == 11 && flag == true);
+
+
             }
 
             @Override
