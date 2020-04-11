@@ -140,8 +140,7 @@ public class MainActivity extends AppCompatActivity {
                  {
                      identity = mobile.substring( 0,3 );
                      if(identity.contains( "017" ) || identity.contains( "016" )
-                             || identity.contains( "018" ) || identity.contains( "019" ) || identity.contains( "013" ) || identity.contains("015")
-                     )
+                             || identity.contains( "018" ) || identity.contains( "019" ) || identity.contains( "013" ) || identity.contains("015"))
                      {
                          numberPhone.setTextColor(Color.parseColor("#03A109"));
                          numberPhone.setBackground(getDrawable(R.drawable.edit_text_background_green));
@@ -191,14 +190,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
-
-        if (currentUser != null){
+        SharedPreferences sharedPreferences = getSharedPreferences("userPassWord", MODE_PRIVATE);
+        if (currentUser != null && sharedPreferences.contains("userPassWord") ){
             SendUserToMainmenu();
         }
+
+
+
+
     }
 
     private void SendUserToMainmenu() {
-        Intent intent = new Intent(MainActivity.this,Home.class);
+        Intent intent = new Intent(MainActivity.this,Menus.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();

@@ -3,6 +3,7 @@ package com.nahinthecoder.notes;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -119,13 +120,15 @@ public class Home extends AppCompatActivity {
                     editor.putString( "userName",userName );
                     editor.commit();
 
-                    SharedPreferences sharedPreferences1 = getSharedPreferences( "userPassword", Context.MODE_PRIVATE );
+                    SharedPreferences sharedPreferences1 = getSharedPreferences( "userPassWord", Context.MODE_PRIVATE );
                     SharedPreferences.Editor editor1 = sharedPreferences1.edit();
-                    editor1.putString( "userName",userPassWord );
+                    editor1.putString( "userPassWord",userPassWord );
                     editor1.commit();
 
-
-
+                    Intent intent = new Intent(getApplicationContext(),Menus.class);
+                    startActivity(intent);
+                    overridePendingTransition(R.anim.slider_1,R.anim.slider_2);
+                    finish();
 
 
 

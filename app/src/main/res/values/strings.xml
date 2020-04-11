@@ -6,4 +6,7 @@
         A verification code has been sent to your phone.Please check it and enter here.
         Some times it may take 1 or 2 minutes to arrive .You should wait on that case.
     </string>
+    <string name="alerts">
+        you have to enter your master password before accessing notes
+    </string>
 </resources>

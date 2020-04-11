@@ -16,6 +16,7 @@
         android:textColor="@color/white"
         android:gravity="center"
         android:text="Profile Setup"
+        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
@@ -47,11 +48,11 @@
                     android:id="@+id/userNameID"
                     android:layout_width="250dp"
                     android:layout_height="35dp"
-                    android:maxLength="20"
+                    android:maxLength="10"
                     android:background="@drawable/edit_text_background_green"
                     android:textSize="15sp"
-                    android:paddingLeft="05dp"
-                    android:hint="your name"
+                    android:paddingLeft="10dp"
+                    android:hint="your nick name"
                     android:fontFamily="sans-serif-light"
                     />
             </LinearLayout>
