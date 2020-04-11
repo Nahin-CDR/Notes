@@ -16,8 +16,9 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_margin="5dp"
-        android:background="@drawable/defult_button"
         android:visibility="gone"
+        android:background="@drawable/defult_button"
+
         >
         <LinearLayout
             android:orientation="vertical"
@@ -53,7 +54,8 @@
 
             <pl.droidsonroids.gif.GifImageView
                 android:layout_width="wrap_content"
-                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
                 android:src="@drawable/hello"
                 />
 
@@ -127,6 +129,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_margin="5dp"
+
         android:background="@drawable/ui"
 
         >
@@ -194,13 +197,14 @@
                 android:gravity="center"
                 android:layout_height="wrap_content">
                 <ImageButton
+                    android:id="@+id/myNotesID"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/folder"
                     style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
                     android:background="@drawable/effect"
                     android:padding="5dp"
-                    />
+                    android:contentDescription="TODO" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -234,6 +238,7 @@
                 android:gravity="center"
                 android:layout_height="wrap_content">
                 <ImageButton
+                    android:id="@+id/searchID"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/search"
@@ -259,10 +264,10 @@
                 android:gravity="center"
                 android:layout_height="wrap_content">
                 <ImageButton
+                    android:id="@+id/deleteID"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/delete"
-
                     style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
                     android:background="@drawable/effect"
                     android:padding="5dp"

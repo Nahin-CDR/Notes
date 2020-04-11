@@ -3,6 +3,7 @@ package com.nahinthecoder.notes;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -11,12 +12,14 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class Menus extends AppCompatActivity {
 
+    ImageButton addNoteButton,myNotesButton,searchButton,deleteButton;
     LinearLayout passWordLayout;
     LinearLayout menusLayout;
     TextView id;
@@ -65,16 +68,57 @@ public class Menus extends AppCompatActivity {
         });
 
 
-
-
-
-
     }
 
     private void MenuLayout() {
 
 
+           addNoteButton = (ImageButton)findViewById(R.id.addNoteID);
+           addNoteButton.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View v) {
+                   Intent intent = new Intent(getApplicationContext(),AddNote.class);
+                   startActivity(intent);
+                   overridePendingTransition(R.anim.slider_1,R.anim.slider_2);
 
+               }
+           });
+
+
+
+           myNotesButton = (ImageButton)findViewById(R.id.myNotesID);
+           myNotesButton.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View v) {
+                   Intent intent = new Intent(getApplicationContext(),MyNotes.class);
+                   startActivity(intent);
+                   overridePendingTransition(R.anim.slider_1,R.anim.slider_2);
+               }
+           });
+
+
+
+           searchButton = (ImageButton)findViewById(R.id.searchID);
+           searchButton.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View v) {
+                   Intent intent = new Intent(getApplicationContext(),Search.class);
+                   startActivity(intent);
+                   overridePendingTransition(R.anim.slider_1,R.anim.slider_2);
+               }
+           });
+
+
+
+           deleteButton = (ImageButton)findViewById(R.id.deleteID);
+           deleteButton.setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View v) {
+                   Intent intent = new Intent(getApplicationContext(),Delete.class);
+                   startActivity(intent);
+                   overridePendingTransition(R.anim.slider_1,R.anim.slider_2);
+               }
+           });
 
 
 
