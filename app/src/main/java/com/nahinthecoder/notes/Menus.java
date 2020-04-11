@@ -22,7 +22,6 @@ public class Menus extends AppCompatActivity {
     TextView id;
     String userName,stored_PassWord;
     EditText inputPassWord;
-    boolean password;
     Button login;
     String myPassWord;
     @Override
@@ -41,37 +40,7 @@ public class Menus extends AppCompatActivity {
         SharedPreferences sharedPreferences1 = getSharedPreferences("userPassWord", Context.MODE_PRIVATE);
         stored_PassWord = sharedPreferences1.getString("userPassWord","Unknown");
 
-
-       /** inputPassWord.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                if (stored_PassWord.equals(myPassWord))
-                {
-                    inputPassWord.setTextColor(Color.parseColor("#FFFFFF"));
-                    inputPassWord.setBackground(getDrawable(R.drawable.edit_text_background_green));
-                    Toast.makeText(Menus.this, "pass word matched !", Toast.LENGTH_SHORT).show();
-                    password = true;
-                }
-                if(!stored_PassWord.equals(myPassWord))
-                {
-                    inputPassWord.setTextColor(Color.parseColor("#FF0000"));
-                    inputPassWord.setBackground(getDrawable(R.drawable.edit_text_background));
-                    password = false;
-                }
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-**/
-
+        MenuLayout();
 
         menusLayout = (LinearLayout)findViewById(R.id.menusLayoutID);
         login = (Button)findViewById(R.id.loginID);
@@ -94,6 +63,18 @@ public class Menus extends AppCompatActivity {
                 }
             }
         });
+
+
+
+
+
+
+    }
+
+    private void MenuLayout() {
+
+
+
 
 
 
