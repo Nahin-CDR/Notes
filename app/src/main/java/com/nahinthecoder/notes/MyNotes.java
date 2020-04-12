@@ -13,12 +13,14 @@ import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.text.InputType;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
+import android.webkit.WebView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -56,10 +58,11 @@ public class MyNotes extends AppCompatActivity {
     ArrayAdapter<String> arrayAdapter;
     private int lastPosition = -1;
 
-
+    private ValueEventListener eventListener;
     String stored_PassWord,inputPassWord,userPhoneNumber;
     EditText myInputPassword;
-    int data = 0;
+
+    boolean n = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -121,8 +124,7 @@ public class MyNotes extends AppCompatActivity {
                         InputMethodManager imm = (InputMethodManager)getSystemService( Context.INPUT_METHOD_SERVICE);
                         imm.hideSoftInputFromWindow(getPassWord_layout.getWindowToken(), 0);
                         /** code for hide keyboard after button press ended**/
-
-                        linearLayout_loading_layout.setVisibility( View.VISIBLE );
+                        linearLayout_loading_layout.setVisibility(View.VISIBLE);
                         getPassWord_layout.setVisibility( View.GONE );
                         layout_for_showing_notes.setVisibility( View.VISIBLE );
                         showNotes();
@@ -153,57 +155,102 @@ public class MyNotes extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("userPhoneNumberKey", Context.MODE_PRIVATE);
         userPhoneNumber = sharedPreferences.getString("userPhoneNumberKey","Unknown");
         databaseReference = FirebaseDatabase.getInstance().getReference(userPhoneNumber);
+
+
+
+
+
+
+
+
+        /** code for hiding loading layout  starts**/
+
+        eventListener = databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                if (dataSnapshot.exists()) {
+
+                   linearLayout_loading_layout.setVisibility(View.GONE);
+
+                }
+                else
+                {
+                    linearLayout_loading_layout.setVisibility(View.GONE);
+                    Toast.makeText(MyNotes.this, "No data found !", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        /** code for hiding loading layout ended **/
+
+
+
+
+
+
         databaseReference.addChildEventListener( new ChildEventListener() {
 
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+
 
                 if (dataSnapshot.exists()) {
 
                     String value = dataSnapshot.getValue( AddData.class ).toString();
                     arrayList.add( value );
                     arrayAdapter.notifyDataSetChanged();
-                    linearLayout_loading_layout.setVisibility( View.GONE );
-                }
-                else
-                {
-                    Toast.makeText(MyNotes.this, "No data found !", Toast.LENGTH_SHORT).show();
+
                 }
 
 
             }
 
-
             @Override
             public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
 
-                Toast.makeText(MyNotes.this, "No data found !", Toast.LENGTH_SHORT).show();
 
             }
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-                Toast.makeText(MyNotes.this, "No data found !", Toast.LENGTH_SHORT).show();
+
             }
 
             @Override
             public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                Toast.makeText(MyNotes.this, "No data found !", Toast.LENGTH_SHORT).show();
+
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
-                Toast.makeText(MyNotes.this, "No data found !", Toast.LENGTH_SHORT).show();
+
 
             }
 
         } );
 
 
-
-
-
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     private boolean isNetworkConnected(){
