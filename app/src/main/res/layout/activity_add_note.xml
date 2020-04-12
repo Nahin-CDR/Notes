@@ -23,7 +23,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:fontFamily="sans-serif-light"
-            android:textColor="@color/colorAccent"
+            android:textColor="#6C1818"
             android:textSize="20dp"
             />
 
@@ -41,16 +41,41 @@
                 android:layout_height="match_parent">
 
 
-
-                <EditText
-                    android:id="@+id/date_id"
-                    android:background="@drawable/edit_text_background_green"
+                <LinearLayout
+                    android:id="@+id/dateTimeLinearLayoutID"
                     android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:paddingLeft="25dp"
-                    android:textSize="15sp"
-                    android:fontFamily="sans-serif-light"
-                    android:hint="Enter Date"/>
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/addnotes_ui"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <TextView
+                        android:id="@+id/date_id"
+                        android:layout_width="200dp"
+                        android:layout_height="28dp"
+                        android:layout_weight="1"
+                        android:paddingTop="5dp"
+                        android:fontFamily="sans-serif-light"
+                        android:hint="Enter Date"
+                        android:paddingLeft="25dp"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/address_id"
+                        android:layout_width="150dp"
+                        android:paddingTop="10dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/addnotes_ui"
+                        android:fontFamily="sans-serif-light"
+                        android:hint="Time"
+                        android:paddingLeft="25dp"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+
 
 
                 <!--
@@ -58,14 +83,15 @@
                 -->
 
                 <EditText
-                    android:id="@+id/full_name_id"
+                    android:id="@+id/topic_id"
                     android:layout_width="match_parent"
-                    android:layout_marginTop="15dp"
-                    android:layout_height="45dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_height="40dp"
                     android:paddingLeft="25dp"
                     android:textSize="15sp"
+                    android:maxLength="25"
                     android:fontFamily="sans-serif-light"
-                    android:background="@drawable/edit_text_background_green"
+                    android:background="@drawable/addnotes_ui"
                     android:hint="My Topic"/>
 
 
@@ -73,16 +99,6 @@
                 <!--Date insertion ends -->
 
 
-                <EditText
-                    android:id="@+id/address_id"
-                    android:layout_width="match_parent"
-                    android:layout_marginTop="15dp"
-                    android:layout_height="45dp"
-                    android:paddingLeft="25dp"
-                    android:textSize="15sp"
-                    android:fontFamily="sans-serif-light"
-                    android:background="@drawable/edit_text_background_green"
-                    android:hint="Time"/>
 
 
                 <EditText
@@ -97,8 +113,8 @@
                     android:paddingLeft="25dp"
                     android:textSize="15sp"
                     android:fontFamily="sans-serif-light"
-                    android:background="@drawable/edit_text_background_green"
-                    android:hint="write note here"/>
+                    android:background="@drawable/addnotes_ui"
+                    android:hint="Write note here"/>
 
 
 
@@ -115,11 +131,11 @@
                         android:layout_marginTop="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/defult_button"
+                        android:background="@drawable/addnotes_ui"
                         android:text="Add"
                         android:textSize="18sp"
                         android:fontFamily="sans-serif-light"
-                        android:textColor="#FFFFFF"
+                        android:textColor="#6C1818"
                         android:textAllCaps="false"
                         android:layout_gravity="center_horizontal"/>
                 </LinearLayout>

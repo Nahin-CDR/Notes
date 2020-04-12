@@ -33,19 +33,17 @@ import java.util.Calendar;
 public class AddNote extends AppCompatActivity {
 
 
-    EditText topic,note,date,time;
+    EditText topic,note;
     Button addFire;
     private FirebaseDatabase db = FirebaseDatabase.getInstance(); //new
-
     //code for date
     DatePickerDialog picker;
-    EditText dateInput;
+    TextView dateInput,date,time;
     String userPhoneNumber;
     String mytime;
-
-
-
     ScrollView scrollView;
+
+    LinearLayout dateTimeLinearLayout;
 
 
 
@@ -67,6 +65,7 @@ public class AddNote extends AppCompatActivity {
         codefor_time();
 
         scrollView = (ScrollView)findViewById(R.id.scrollView_showID);
+        dateTimeLinearLayout = (LinearLayout)findViewById(R.id.dateTimeLinearLayoutID);
 
 
     }
@@ -76,14 +75,14 @@ public class AddNote extends AppCompatActivity {
         Calendar c = Calendar.getInstance();
         SimpleDateFormat dateformat = new SimpleDateFormat("hh:mm:ss aa");
         mytime = dateformat.format(c.getTime());
-        time = (EditText)findViewById(R.id.address_id);
+        time = (TextView) findViewById(R.id.address_id);
         time.setText(mytime);
     }
 
 
     private void codefor_date() {
 
-        dateInput =(EditText) findViewById(R.id.date_id);
+        dateInput =(TextView) findViewById(R.id.date_id);
         dateInput.setInputType(InputType.TYPE_NULL);
 
         dateInput.setOnClickListener(new View.OnClickListener() {
@@ -109,10 +108,10 @@ public class AddNote extends AppCompatActivity {
 
     private void updateprofile() {
 
-        topic =(EditText)findViewById(R.id.full_name_id);
+        topic =(EditText)findViewById(R.id.topic_id);
         note = (EditText)findViewById(R.id.father_name_id);
 
-        date = (EditText)findViewById(R.id.date_id);
+        date = (TextView)findViewById(R.id.date_id);
 
         addFire = (Button)findViewById(R.id.submit_button_id);
 
@@ -127,7 +126,61 @@ public class AddNote extends AppCompatActivity {
                 String user_note = note.getText().toString();
                 String current_date =  date.getText().toString().trim();
                 String current_time = mytime;
-                if(!TextUtils.isEmpty(user_topic) && !TextUtils.isEmpty(user_note) && !TextUtils.isEmpty(current_date) && current_date.length()!=0)
+
+                if(TextUtils.isEmpty(user_topic) && TextUtils.isEmpty(user_note) && !TextUtils.isEmpty(current_date) && current_date.length()!=0)
+                {
+                    /**if date field has value and all others are empty**/
+
+                    dateTimeLinearLayout.setBackground(getDrawable(R.drawable.addnotes_ui));
+                    scrollView.setBackground(getDrawable(R.drawable.addnotes_ui));
+                    topic.setBackground(getDrawable(R.drawable.edit_text_background));
+                    note.setBackground(getDrawable(R.drawable.edit_text_background));
+                }
+                if(TextUtils.isEmpty(user_topic) && !TextUtils.isEmpty(user_note) && TextUtils.isEmpty(current_date) && current_date.length()==0)
+                {
+                    /** if note field has value and all others are empty**/
+
+                    topic.setBackground(getDrawable(R.drawable.edit_text_background));
+                    dateTimeLinearLayout.setBackground(getDrawable(R.drawable.edit_text_background));
+
+                    note.setBackground(getDrawable(R.drawable.addnotes_ui));
+                    scrollView.setBackground(getDrawable(R.drawable.addnotes_ui));
+                }
+                if(!TextUtils.isEmpty(user_topic) && TextUtils.isEmpty(user_note) && TextUtils.isEmpty(current_date) && current_date.length()==0)
+                {
+                    /** if topic field has value and all others are empty**/
+
+                    topic.setBackground(getDrawable(R.drawable.addnotes_ui));
+                    dateTimeLinearLayout.setBackground(getDrawable(R.drawable.edit_text_background));
+                    note.setBackground(getDrawable(R.drawable.edit_text_background));
+                    scrollView.setBackground(getDrawable(R.drawable.addnotes_ui));
+                }
+                if(!TextUtils.isEmpty(user_topic) && !TextUtils.isEmpty(user_note) && TextUtils.isEmpty(current_date) && current_date.length()==0)
+                {
+                    dateTimeLinearLayout.setBackground(getDrawable(R.drawable.edit_text_background));
+                    scrollView.setBackground(getDrawable(R.drawable.addnotes_ui));
+                    topic.setBackground(getDrawable(R.drawable.addnotes_ui));
+                    note.setBackground(getDrawable(R.drawable.addnotes_ui));
+
+
+                }
+                if(TextUtils.isEmpty(user_topic) && !TextUtils.isEmpty(user_note) && !TextUtils.isEmpty(current_date) && current_date.length()!=0)
+                {
+                    topic.setBackground(getDrawable(R.drawable.edit_text_background));
+
+                    note.setBackground(getDrawable(R.drawable.addnotes_ui));
+                    dateTimeLinearLayout.setBackground(getDrawable(R.drawable.addnotes_ui));
+                    scrollView.setBackground(getDrawable(R.drawable.addnotes_ui));
+                }
+                if(!TextUtils.isEmpty(user_topic) && TextUtils.isEmpty(user_note) && !TextUtils.isEmpty(current_date) && current_date.length()!=0)
+                {
+                    note.setBackground(getDrawable(R.drawable.edit_text_background));
+
+                    topic.setBackground(getDrawable(R.drawable.addnotes_ui));
+                    dateTimeLinearLayout.setBackground(getDrawable(R.drawable.addnotes_ui));
+                    scrollView.setBackground(getDrawable(R.drawable.addnotes_ui));
+                }
+                 if(!TextUtils.isEmpty(user_topic) && !TextUtils.isEmpty(user_note) && !TextUtils.isEmpty(current_date) && current_date.length()!=0)
                 {
 
                     if(isNetworkConnected()==true){
@@ -137,26 +190,36 @@ public class AddNote extends AppCompatActivity {
                         Toast.makeText(AddNote.this, "Added Successfully", Toast.LENGTH_SHORT).show();
                         topic.setText("");
                         note.setText("");
+
                         scrollView.setBackground(getDrawable(R.drawable.addnotes_ui));
-                        //date.setText("");
-                        //time.setText("");
+                        topic.setBackground(getDrawable(R.drawable.addnotes_ui));
+                        dateTimeLinearLayout.setBackground(getDrawable(R.drawable.addnotes_ui));
+                        note.setBackground(getDrawable(R.drawable.addnotes_ui));
                     }
                     else
                     {
                         Toast.makeText( AddNote.this, "No internet !", Toast.LENGTH_SHORT ).show();
                         scrollView.setBackground(getDrawable(R.drawable.edit_text_background));
+                        topic.setBackground(getDrawable(R.drawable.addnotes_ui));
+                        dateTimeLinearLayout.setBackground(getDrawable(R.drawable.addnotes_ui));
+
                     }
 
                 }
-                else
+                if (TextUtils.isEmpty(user_topic) && TextUtils.isEmpty(user_note) && TextUtils.isEmpty(current_date) && current_date.length()==0)
                 {
                     Toast.makeText(AddNote.this, "You have to fill up all the fields !", Toast.LENGTH_SHORT).show();
                     scrollView.setBackground(getDrawable(R.drawable.edit_text_background));
+                    topic.setBackground(getDrawable(R.drawable.addnotes_ui));
+                    dateTimeLinearLayout.setBackground(getDrawable(R.drawable.addnotes_ui));
+                    note.setBackground(getDrawable(R.drawable.addnotes_ui));
                     //topic.setText("");
                     //note.setText("");
                     //date.setText("");
                     //time.setText("");
                 }
+
+
 
 
             }

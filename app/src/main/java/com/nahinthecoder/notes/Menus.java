@@ -2,6 +2,7 @@ package com.nahinthecoder.notes;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -9,7 +10,10 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -57,6 +61,10 @@ public class Menus extends AppCompatActivity {
                     passWordLayout.setVisibility(View.GONE);
                     menusLayout.setVisibility(View.VISIBLE);
 
+                    /** code for hiding keyboard after taking input and going another activity **/
+                    InputMethodManager inputManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+                    inputManager.hideSoftInputFromWindow(inputPassWord.getWindowToken(), 0);
+
                 }
                 else
                 {
@@ -84,8 +92,6 @@ public class Menus extends AppCompatActivity {
                }
            });
 
-
-
            myNotesButton = (ImageButton)findViewById(R.id.myNotesID);
            myNotesButton.setOnClickListener(new View.OnClickListener() {
                @Override
@@ -95,7 +101,6 @@ public class Menus extends AppCompatActivity {
                    overridePendingTransition(R.anim.slider_1,R.anim.slider_2);
                }
            });
-
 
 
            searchButton = (ImageButton)findViewById(R.id.searchID);
@@ -108,8 +113,6 @@ public class Menus extends AppCompatActivity {
                }
            });
 
-
-
            deleteButton = (ImageButton)findViewById(R.id.deleteID);
            deleteButton.setOnClickListener(new View.OnClickListener() {
                @Override
@@ -119,11 +122,5 @@ public class Menus extends AppCompatActivity {
                    overridePendingTransition(R.anim.slider_1,R.anim.slider_2);
                }
            });
-
-
-
-
-
-
     }
 }
