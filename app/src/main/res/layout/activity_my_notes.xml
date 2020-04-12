@@ -1,9 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_margin="5dp"
     tools:context=".MyNotes">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ScrollView
+        android:id="@+id/getPassWord_linear_layoutID"
+        android:background="@drawable/defult_button"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            >
+            <pl.droidsonroids.gif.GifImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/hello"
+                />
+
+            <EditText
+                android:id="@+id/myPasswordID"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_margin="30dp"
+                android:paddingLeft="10dp"
+                android:fontFamily="sans-serif-light"
+                android:hint="Give master password"
+                android:maxLength="8"
+                android:inputType="number"
+                android:background="@drawable/addnotes_ui"
+                />
+
+            <Button
+                android:id="@+id/get_PassWord_button_id"
+                android:layout_marginTop="02dp"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:background="@drawable/ui"
+                android:text="Go"
+                android:fontFamily="sans-serif-light"
+                android:textSize="15sp"
+                android:textColor="#670B0B"
+                android:textAllCaps="false"
+                android:layout_gravity="center_horizontal"
+                />
+        </LinearLayout>
+    </ScrollView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/addnotes_ui"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="#6C1818"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My Notes"
+                android:textSize="20sp"
+                android:layout_marginTop="05dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/showNotesLayoutID"
+            android:layout_width="match_parent"
+            android:background="@drawable/addnotes_ui"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:visibility="gone"
+                android:gravity="center"
+                android:id="@+id/loading_layoutID"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <pl.droidsonroids.gif.GifImageView
+                    android:id="@+id/gif_loadingID"
+                    android:layout_gravity="center"
+                    android:layout_width="60dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/loading"/>
+            </LinearLayout>
+
+            <ListView
+                android:layout_width="match_parent"
+                android:id="@+id/list_itemViewID"
+                android:transcriptMode="alwaysScroll"
+                tools:listitem="@layout/support_simple_spinner_dropdown_item"
+                android:layout_height="match_parent"
+                />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+</LinearLayout>

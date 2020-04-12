@@ -20,7 +20,6 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -42,7 +41,6 @@ public class AddNote extends AppCompatActivity {
     String userPhoneNumber;
     String mytime;
     ScrollView scrollView;
-
     LinearLayout dateTimeLinearLayout;
 
 
@@ -135,6 +133,7 @@ public class AddNote extends AppCompatActivity {
                     scrollView.setBackground(getDrawable(R.drawable.addnotes_ui));
                     topic.setBackground(getDrawable(R.drawable.edit_text_background));
                     note.setBackground(getDrawable(R.drawable.edit_text_background));
+
                 }
                 if(TextUtils.isEmpty(user_topic) && !TextUtils.isEmpty(user_note) && TextUtils.isEmpty(current_date) && current_date.length()==0)
                 {
@@ -213,10 +212,7 @@ public class AddNote extends AppCompatActivity {
                     topic.setBackground(getDrawable(R.drawable.addnotes_ui));
                     dateTimeLinearLayout.setBackground(getDrawable(R.drawable.addnotes_ui));
                     note.setBackground(getDrawable(R.drawable.addnotes_ui));
-                    //topic.setText("");
-                    //note.setText("");
-                    //date.setText("");
-                    //time.setText("");
+
                 }
 
 

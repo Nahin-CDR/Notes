@@ -138,6 +138,7 @@
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:text="Menu"
+            android:fontFamily="sans-serif-light"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:textColor="@color/colorAccent"
