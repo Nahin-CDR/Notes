@@ -57,9 +57,7 @@ public class AddNote extends AppCompatActivity {
 
 
         updateprofile();
-
         codefor_date();
-
         codefor_time();
 
         scrollView = (ScrollView)findViewById(R.id.scrollView_showID);
@@ -81,36 +79,17 @@ public class AddNote extends AppCompatActivity {
     private void codefor_date() {
 
         dateInput =(TextView) findViewById(R.id.date_id);
-        dateInput.setInputType(InputType.TYPE_NULL);
-
-        dateInput.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final Calendar cldr = Calendar.getInstance();
-                int day = cldr.get(Calendar.DAY_OF_MONTH);
-                int month = cldr.get(Calendar.MONTH);
-                int year = cldr.get(Calendar.YEAR);
-                // date picker dialog
-                picker = new DatePickerDialog(AddNote.this,
-                        new DatePickerDialog.OnDateSetListener() {
-                            @Override
-                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                                dateInput.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
-                            }
-                        }, year, month, day);
-                picker.show();
-            }
-        });
-
+        Calendar c = Calendar.getInstance();
+        SimpleDateFormat dateformat = new SimpleDateFormat("d/M/yyyy");
+        String mydate = dateformat.format(c.getTime());
+        dateInput.setText(mydate);
     }
 
     private void updateprofile() {
 
         topic =(EditText)findViewById(R.id.topic_id);
         note = (EditText)findViewById(R.id.father_name_id);
-
         date = (TextView)findViewById(R.id.date_id);
-
         addFire = (Button)findViewById(R.id.submit_button_id);
 
 
@@ -125,16 +104,7 @@ public class AddNote extends AppCompatActivity {
                 String current_date =  date.getText().toString().trim();
                 String current_time = mytime;
 
-                if(TextUtils.isEmpty(user_topic) && TextUtils.isEmpty(user_note) && !TextUtils.isEmpty(current_date) && current_date.length()!=0)
-                {
-                    /**if date field has value and all others are empty**/
 
-                    dateTimeLinearLayout.setBackground(getDrawable(R.drawable.addnotes_ui));
-                    scrollView.setBackground(getDrawable(R.drawable.addnotes_ui));
-                    topic.setBackground(getDrawable(R.drawable.edit_text_background));
-                    note.setBackground(getDrawable(R.drawable.edit_text_background));
-
-                }
                 if(TextUtils.isEmpty(user_topic) && !TextUtils.isEmpty(user_note) && TextUtils.isEmpty(current_date) && current_date.length()==0)
                 {
                     /** if note field has value and all others are empty**/
@@ -154,6 +124,8 @@ public class AddNote extends AppCompatActivity {
                     note.setBackground(getDrawable(R.drawable.edit_text_background));
                     scrollView.setBackground(getDrawable(R.drawable.addnotes_ui));
                 }
+
+                /**
                 if(!TextUtils.isEmpty(user_topic) && !TextUtils.isEmpty(user_note) && TextUtils.isEmpty(current_date) && current_date.length()==0)
                 {
                     dateTimeLinearLayout.setBackground(getDrawable(R.drawable.edit_text_background));
@@ -163,6 +135,10 @@ public class AddNote extends AppCompatActivity {
 
 
                 }
+
+                **/
+
+
                 if(TextUtils.isEmpty(user_topic) && !TextUtils.isEmpty(user_note) && !TextUtils.isEmpty(current_date) && current_date.length()!=0)
                 {
                     topic.setBackground(getDrawable(R.drawable.edit_text_background));
@@ -174,7 +150,6 @@ public class AddNote extends AppCompatActivity {
                 if(!TextUtils.isEmpty(user_topic) && TextUtils.isEmpty(user_note) && !TextUtils.isEmpty(current_date) && current_date.length()!=0)
                 {
                     note.setBackground(getDrawable(R.drawable.edit_text_background));
-
                     topic.setBackground(getDrawable(R.drawable.addnotes_ui));
                     dateTimeLinearLayout.setBackground(getDrawable(R.drawable.addnotes_ui));
                     scrollView.setBackground(getDrawable(R.drawable.addnotes_ui));
@@ -194,6 +169,9 @@ public class AddNote extends AppCompatActivity {
                         topic.setBackground(getDrawable(R.drawable.addnotes_ui));
                         dateTimeLinearLayout.setBackground(getDrawable(R.drawable.addnotes_ui));
                         note.setBackground(getDrawable(R.drawable.addnotes_ui));
+                        codefor_time(); //called this function again because there is a chance to change this
+                        codefor_date();//called this function again because there is a chance to change this
+                        //so every time date and time will be checked to update
                     }
                     else
                     {
@@ -205,7 +183,7 @@ public class AddNote extends AppCompatActivity {
                     }
 
                 }
-                if (TextUtils.isEmpty(user_topic) && TextUtils.isEmpty(user_note) && TextUtils.isEmpty(current_date) && current_date.length()==0)
+                if (TextUtils.isEmpty(user_topic) && TextUtils.isEmpty(user_note))
                 {
                     Toast.makeText(AddNote.this, "You have to fill up all the fields !", Toast.LENGTH_SHORT).show();
                     scrollView.setBackground(getDrawable(R.drawable.edit_text_background));
@@ -214,16 +192,10 @@ public class AddNote extends AppCompatActivity {
                     note.setBackground(getDrawable(R.drawable.addnotes_ui));
 
                 }
-
-
-
-
             }
         });
 
     }
-
-
     private boolean isNetworkConnected(){
         ConnectivityManager cm = (ConnectivityManager) getSystemService(MainActivity.CONNECTIVITY_SERVICE);
 
