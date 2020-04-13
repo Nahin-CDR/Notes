@@ -5,7 +5,169 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/addnotes_ui"
+    android:layout_marginRight="5dp"
+    android:layout_marginLeft="5dp"
     tools:context=".Search">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search By Date"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:textSize="20sp"
+        android:textColor="#6C1818"
+        android:fontFamily="sans-serif-light"
+        />
+
+
+
+        <LinearLayout
+            android:id="@+id/myDisplayID"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/addnotes_ui"
+            >
+
+            <LinearLayout
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/addnotes_ui"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <TextView
+                    android:id="@+id/date"
+                    android:layout_width="200dp"
+                    android:layout_height="28dp"
+                    android:layout_weight="1"
+                    android:paddingTop="5dp"
+                    android:fontFamily="sans-serif-light"
+                    android:hint="Enter Date"
+                    android:paddingLeft="25dp"
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:id="@+id/search_button_id"
+                    android:layout_width="150dp"
+                    android:paddingTop="10dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/addnotes_ui"
+                    android:fontFamily="sans-serif-light"
+                    android:text="Search"
+                    android:textAlignment="center"
+                    android:textColor="#6C1818"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+
+
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@drawable/addnotes_ui"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                >
+                <LinearLayout
+                    android:id="@+id/loading_layoutID"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <pl.droidsonroids.gif.GifImageView
+                        android:id="@+id/gif_loadingID"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/myload"/>
+                    <TextView
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textAlignment="center"
+                        android:text="Please Wait,We are getting data.."/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/noDataFoundID"
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:gravity="center"
+                        android:fontFamily="sans-serif-light"
+                        android:layout_width="wrap_content"
+                        android:layout_height="100dp"
+                        android:src="@drawable/nodatafound"
+                        android:layout_margin="5dp"
+                        android:textSize="10sp"
+                        />
+                </LinearLayout>
+
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_margin="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textAlignment="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:textColor="#8F1006"
+                        android:fontFamily="sans-serif-light"
+                        android:id="@+id/display_id"
+                        android:textSize="15sp"/>
+                </androidx.core.widget.NestedScrollView>
+
+            </LinearLayout>
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+
+
+
 
 
 
