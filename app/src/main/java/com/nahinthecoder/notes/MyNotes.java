@@ -52,6 +52,7 @@ public class MyNotes extends AppCompatActivity {
 
 
     LinearLayout layout_for_showing_notes;
+    LinearLayout noRecordFound;
 
     ListView listView;
     ArrayList<String> arrayList = new ArrayList<>();
@@ -62,7 +63,7 @@ public class MyNotes extends AppCompatActivity {
     String stored_PassWord,inputPassWord,userPhoneNumber;
     EditText myInputPassword;
 
-    boolean n = true;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,11 +103,21 @@ public class MyNotes extends AppCompatActivity {
         layout_for_showing_notes = (LinearLayout) findViewById(R.id.showNotesLayoutID);
 
         linearLayout_loading_layout = (LinearLayout)findViewById(R.id.loading_layoutID);
+        noRecordFound = (LinearLayout)findViewById(R.id.noDataFound_layoutID);
         getPassWord_layout = (ScrollView)findViewById( R.id.getPassWord_linear_layoutID);
-        getPassWord_layout.setVisibility( View.VISIBLE );
+       // getPassWord_layout.setVisibility( View.VISIBLE );
+
+
+
+        getPassWord_layout.setVisibility( View.GONE );
+        linearLayout_loading_layout.setVisibility(View.VISIBLE);
+        layout_for_showing_notes.setVisibility( View.VISIBLE );
+        showNotes();
+
+
+        /** inactive codes **/
 
         myInputPassword = (EditText)findViewById(R.id.myPasswordID);
-
         button_for_go_to_view_notes = (Button)findViewById( R.id.get_PassWord_button_id);
         button_for_go_to_view_notes.setOnClickListener( new View.OnClickListener() {
             @Override
@@ -115,7 +126,6 @@ public class MyNotes extends AppCompatActivity {
                 SharedPreferences sharedPreferences = getSharedPreferences("userPassWord", Context.MODE_PRIVATE);
                 stored_PassWord = sharedPreferences.getString("userPassWord","Unknown");
                 inputPassWord = myInputPassword.getText().toString().trim();
-
                 if(inputPassWord.equals(stored_PassWord))
                 {
                     if(isNetworkConnected()==true)
@@ -146,6 +156,10 @@ public class MyNotes extends AppCompatActivity {
 
         } );
 
+        /** inactive codes **/
+
+
+
 
     }
 
@@ -157,12 +171,6 @@ public class MyNotes extends AppCompatActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference(userPhoneNumber);
 
 
-
-
-
-
-
-
         /** code for hiding loading layout  starts**/
 
         eventListener = databaseReference.addValueEventListener(new ValueEventListener() {
@@ -172,12 +180,13 @@ public class MyNotes extends AppCompatActivity {
                 if (dataSnapshot.exists()) {
 
                    linearLayout_loading_layout.setVisibility(View.GONE);
+                   noRecordFound.setVisibility(View.GONE);
 
                 }
                 else
                 {
                     linearLayout_loading_layout.setVisibility(View.GONE);
-                    Toast.makeText(MyNotes.this, "No data found !", Toast.LENGTH_SHORT).show();
+                    noRecordFound.setVisibility(View.VISIBLE);
                 }
             }
 
@@ -188,10 +197,6 @@ public class MyNotes extends AppCompatActivity {
         });
 
         /** code for hiding loading layout ended **/
-
-
-
-
 
 
         databaseReference.addChildEventListener( new ChildEventListener() {
@@ -238,16 +243,6 @@ public class MyNotes extends AppCompatActivity {
 
 
     }
-
-
-
-
-
-
-
-
-
-
 
 
 

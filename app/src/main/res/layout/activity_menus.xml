@@ -8,14 +8,13 @@
     android:background="@color/white"
     tools:context=".Menus">
 
-
-
     <LinearLayout
         android:id="@+id/inputPasswordLinearLayoutID"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_margin="5dp"
+       android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:visibility="gone"
         android:background="@drawable/defult_button"
         >
@@ -114,21 +113,18 @@
                     android:textAllCaps="false"
                     android:textColor="#000000"
                     android:textSize="15sp" />
-
             </LinearLayout>
-
         </ScrollView>
-
-
     </LinearLayout>
+
 
     <LinearLayout
         android:id="@+id/menusLayoutID"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_margin="5dp"
-
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp"
         android:background="@drawable/ui"
 
         >

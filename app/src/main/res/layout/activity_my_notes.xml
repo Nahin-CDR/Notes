@@ -6,11 +6,12 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    android:layout_margin="5dp"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
     tools:context=".MyNotes">
 
 
-
+    <!-- inactive code-->
     <ScrollView
         android:id="@+id/getPassWord_linear_layoutID"
         android:background="@drawable/defult_button"
@@ -59,6 +60,10 @@
     </ScrollView>
 
 
+
+
+<!-- active code starts from here-->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -84,6 +89,7 @@
                 />
         </LinearLayout>
 
+        <!-- code for loading -->
         <LinearLayout
             android:id="@+id/showNotesLayoutID"
             android:layout_width="match_parent"
@@ -102,10 +108,37 @@
                 <pl.droidsonroids.gif.GifImageView
                     android:id="@+id/gif_loadingID"
                     android:layout_gravity="center"
-                    android:layout_width="60dp"
-                    android:layout_height="80dp"
-                    android:src="@drawable/loading"/>
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/myload"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:hint="Please wait...we are loading data"
+                    android:fontFamily="sans-serif-light"
+                    android:textSize="12sp"
+                    />
             </LinearLayout>
+
+             <!--if no data found -->
+            <LinearLayout
+                android:gravity="center"
+                android:visibility="gone"
+                android:id="@+id/noDataFound_layoutID"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+           <ImageView
+               android:layout_width="200dp"
+               android:layout_height="200dp"
+               android:src="@drawable/nodatafound"
+               />
+            </LinearLayout>
+
+
+
+            <!--list view for showing data -->
 
             <ListView
                 android:layout_width="match_parent"
