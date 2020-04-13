@@ -1,9 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
     tools:context=".Delete">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/defult_button"
+        >
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete by Topic"
+            android:textSize="20sp"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:fontFamily="sans-serif-light"
+            android:textColor="#FFFFFF"
+            />
+
+        <LinearLayout
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:background="@drawable/defult_button"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_marginTop="15dp"
+                android:layout_width="match_parent"
+                android:layout_margin="10dp"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/del_search_byId"
+                    android:inputType="text"
+                    android:padding="12dp"
+                    android:fontFamily="sans-serif-light"
+                    android:background="@drawable/defult_button"
+                    android:hint="Enter Topic Name"
+                    android:textSize="15sp"/>
+                <Button
+                    android:layout_marginTop="10dp"
+                    android:layout_gravity="center"
+                    android:id="@+id/del_search_button"
+                    android:background="@drawable/defult_button"
+                    android:textColor="#6A0101"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:fontFamily="sans-serif-light"
+                    android:textSize="15sp"
+                    android:text="Search"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:weightSum="4"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+                <TextView
+                    android:textColor="#CA1709"
+                    android:layout_weight="3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/defult_button"
+                    android:padding="12dp"
+                    android:textAlignment="center"
+                    android:id="@+id/del_preview_nameId"
+                    android:hint="Topic Name"
+                    android:fontFamily="sans-serif-light"
+                    android:textSize="12sp"/>
+                <Button
+                    android:layout_weight="1"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="Delete"
+                    android:visibility="gone"
+                    android:textAllCaps="false"
+                    android:textSize="15sp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/button_desible"
+                    android:textColor="#FFFFFF"
+                    android:id="@+id/delete_prdoductId"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/loading_layoutID"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <pl.droidsonroids.gif.GifImageView
+                    android:id="@+id/gif_loadingID"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:src="@drawable/myload"/>
+                <TextView
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textAlignment="center"
+                    android:text="Please Wait,We are getting data.."/>
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/noDataID"
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:visibility="gone"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:gravity="center"
+                    android:fontFamily="sans-serif-light"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:src="@drawable/nodatafound"
+                    android:layout_margin="5dp"
+                    android:textSize="10sp"
+                    />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>
