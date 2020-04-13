@@ -154,6 +154,7 @@ public class Search extends AppCompatActivity {
                     {
                         displayBackgroundLayout.setBackground(getDrawable(R.drawable.addnotes_ui));
                         listView.setVisibility(View.GONE);
+                        nodata.setVisibility(View.GONE);
                         linearLayout_loading.setVisibility( View.VISIBLE );
                         showData();
                     }else
