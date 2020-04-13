@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.webkit.WebView;
@@ -50,11 +51,58 @@ public class Search extends AppCompatActivity {
 
     LinearLayout displayBackgroundLayout;
 
+
+
+
+    ListView listView;
+    ArrayList<String> arrayList = new ArrayList<>();
+    ArrayAdapter<String> arrayAdapter;
+    private int lastPosition = -1;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
         getSupportActionBar().hide();
+
+
+
+
+
+
+        if(android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.HONEYCOMB) {
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
+        }
+
+        listView = (ListView)findViewById( R.id.list_itemViewID );
+        arrayAdapter = new ArrayAdapter<String>(this,R.layout.row,arrayList){
+
+            @NonNull
+            @Override
+            public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+
+
+                View view = super.getView( position, convertView, parent );
+                if(position%2==1)
+                {
+                    view.setBackgroundColor(Color.parseColor("#ffffff"));
+                    view.setBackground(getDrawable(R.drawable.addnotes_ui));
+                }else{
+                    view.setBackgroundColor(Color.parseColor("#ffffff"));
+                    view.setBackground(getDrawable(R.drawable.addnotes_ui));
+                }
+                Animation animation = AnimationUtils.loadAnimation(getContext(), (position > lastPosition) ? R.anim.move:R.anim.no_animation); //animation for chatting is > "chatting"
+                view.startAnimation(animation);
+                lastPosition = position;
+                return view;
+            }
+        };
+        listView.setAdapter( arrayAdapter );
+
+
+
+
 
 
 
@@ -94,7 +142,7 @@ public class Search extends AppCompatActivity {
 
         search = (TextView)findViewById(R.id.search_button_id);
         myInput = (TextView)findViewById(R.id.date);
-        displayView =(TextView)findViewById(R.id.display_id);
+        //displayView =(TextView)findViewById(R.id.display_id);
 
         search.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,6 +153,7 @@ public class Search extends AppCompatActivity {
                     if(isNetworkConnected()==true)
                     {
                         displayBackgroundLayout.setBackground(getDrawable(R.drawable.addnotes_ui));
+                        listView.setVisibility(View.GONE);
                         linearLayout_loading.setVisibility( View.VISIBLE );
                         showData();
                     }else
@@ -147,29 +196,41 @@ public class Search extends AppCompatActivity {
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
 
-                    String data = "";
+
+
+
+
+                    String data;
                     if (dataSnapshot.exists()){
 
-                        nodata.setVisibility( View.GONE );
+                          linearLayout_loading.setVisibility( View.GONE );
+                          nodata.setVisibility( View.GONE );
+                          listView.setVisibility(View.VISIBLE);
 
-                        for (DataSnapshot itemSnapshot : dataSnapshot.getChildren()){
-                            AddData addData = itemSnapshot.getValue(AddData.class);
+
+
+                       for (DataSnapshot itemSnapshot : dataSnapshot.getChildren()){
+                           AddData addData = itemSnapshot.getValue(AddData.class);
                             String mydate = addData.getDate();
                             String mytime = addData.getTime();
                             String mytopic = addData.getTopic();
                             String mynote = addData.getNote();
 
-                            data = data+"\n"+mydate+"     "+mytime+"\n"+mytopic+"\n\n"+mynote+"\n\n\n\n\n";
+                           data = "\n"+mydate+"     "+mytime+"\n"+mytopic+"\n\n"+mynote+"\n";
+                           arrayList.add( data );
+                           arrayAdapter.notifyDataSetChanged();
+                       }
 
-                        }
-                        linearLayout_loading.setVisibility( View.GONE );
-                        displayView.setText(data);
+                   //     linearLayout_loading.setVisibility( View.GONE );
+                     //   displayView.setText(data);
                     }
                     else {
+                        listView.setVisibility(View.GONE);
                         nodata.setVisibility( View.VISIBLE );
-                        displayView.setText( " " );
                         linearLayout_loading.setVisibility( View.GONE );
                     }
+
+
 
                 }
 
