@@ -142,7 +142,6 @@ public class AddNote extends AppCompatActivity {
                 if(TextUtils.isEmpty(user_topic) && !TextUtils.isEmpty(user_note) && !TextUtils.isEmpty(current_date) && current_date.length()!=0)
                 {
                     topic.setBackground(getDrawable(R.drawable.edit_text_background));
-
                     note.setBackground(getDrawable(R.drawable.addnotes_ui));
                     dateTimeLinearLayout.setBackground(getDrawable(R.drawable.addnotes_ui));
                     scrollView.setBackground(getDrawable(R.drawable.addnotes_ui));
@@ -164,24 +163,23 @@ public class AddNote extends AppCompatActivity {
                         Toast.makeText(AddNote.this, "Added Successfully", Toast.LENGTH_SHORT).show();
                         topic.setText("");
                         note.setText("");
-
                         scrollView.setBackground(getDrawable(R.drawable.addnotes_ui));
                         topic.setBackground(getDrawable(R.drawable.addnotes_ui));
                         dateTimeLinearLayout.setBackground(getDrawable(R.drawable.addnotes_ui));
                         note.setBackground(getDrawable(R.drawable.addnotes_ui));
-                        codefor_time(); //called this function again because there is a chance to change this
+                        codefor_time();//called this function again because there is a chance to change this
                         codefor_date();//called this function again because there is a chance to change this
                         //so every time date and time will be checked to update
                     }
                     else
                     {
-                        Toast.makeText( AddNote.this, "No internet !", Toast.LENGTH_SHORT ).show();
+                        Toast.makeText( AddNote.this, "No internet !",Toast.LENGTH_SHORT).show();
                         scrollView.setBackground(getDrawable(R.drawable.edit_text_background));
                         topic.setBackground(getDrawable(R.drawable.addnotes_ui));
                         dateTimeLinearLayout.setBackground(getDrawable(R.drawable.addnotes_ui));
+                        note.setBackground(getDrawable(R.drawable.addnotes_ui));
 
                     }
-
                 }
                 if (TextUtils.isEmpty(user_topic) && TextUtils.isEmpty(user_note))
                 {
@@ -190,7 +188,6 @@ public class AddNote extends AppCompatActivity {
                     topic.setBackground(getDrawable(R.drawable.addnotes_ui));
                     dateTimeLinearLayout.setBackground(getDrawable(R.drawable.addnotes_ui));
                     note.setBackground(getDrawable(R.drawable.addnotes_ui));
-
                 }
             }
         });

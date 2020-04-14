@@ -160,6 +160,7 @@ public class Search extends AppCompatActivity {
                     }else
                     {
                         Toast.makeText( Search.this, "No Internet !", Toast.LENGTH_SHORT ).show();
+                        displayBackgroundLayout.setBackground(getDrawable(R.drawable.edit_text_background));
                     }
                 }
                 else

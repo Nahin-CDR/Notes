@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -85,9 +86,17 @@ public class Menus extends AppCompatActivity {
            addNoteButton.setOnClickListener(new View.OnClickListener() {
                @Override
                public void onClick(View v) {
-                   Intent intent = new Intent(getApplicationContext(),AddNote.class);
-                   startActivity(intent);
-                   overridePendingTransition(R.anim.slider_1,R.anim.slider_2);
+                   if (isNetworkConnected()==true)
+                   {
+                       Intent intent = new Intent(getApplicationContext(),AddNote.class);
+                       startActivity(intent);
+                       overridePendingTransition(R.anim.slider_1,R.anim.slider_2);
+                   }
+                   else
+                   {
+                       Toast.makeText(Menus.this, "No Internet !", Toast.LENGTH_SHORT).show();
+                   }
+
 
                }
            });
@@ -96,9 +105,17 @@ public class Menus extends AppCompatActivity {
            myNotesButton.setOnClickListener(new View.OnClickListener() {
                @Override
                public void onClick(View v) {
-                   Intent intent = new Intent(getApplicationContext(),MyNotes.class);
-                   startActivity(intent);
-                   overridePendingTransition(R.anim.slider_1,R.anim.slider_2);
+                   if (isNetworkConnected()==true)
+                   {
+                       Intent intent = new Intent(getApplicationContext(),MyNotes.class);
+                       startActivity(intent);
+                       overridePendingTransition(R.anim.slider_1,R.anim.slider_2);
+                   }
+                   else
+                   {
+                       Toast.makeText(Menus.this, "No Internet !", Toast.LENGTH_SHORT).show();
+                   }
+
                }
            });
 
@@ -107,9 +124,17 @@ public class Menus extends AppCompatActivity {
            searchButton.setOnClickListener(new View.OnClickListener() {
                @Override
                public void onClick(View v) {
-                   Intent intent = new Intent(getApplicationContext(),Search.class);
-                   startActivity(intent);
-                   overridePendingTransition(R.anim.slider_1,R.anim.slider_2);
+                   if(isNetworkConnected()==true)
+                   {
+                       Intent intent = new Intent(getApplicationContext(),Search.class);
+                       startActivity(intent);
+                       overridePendingTransition(R.anim.slider_1,R.anim.slider_2);
+                   }
+                   else
+                   {
+                       Toast.makeText(Menus.this, "No Internet !", Toast.LENGTH_SHORT).show();
+                   }
+
                }
            });
 
@@ -117,10 +142,28 @@ public class Menus extends AppCompatActivity {
            deleteButton.setOnClickListener(new View.OnClickListener() {
                @Override
                public void onClick(View v) {
-                   Intent intent = new Intent(getApplicationContext(),Delete.class);
-                   startActivity(intent);
-                   overridePendingTransition(R.anim.slider_1,R.anim.slider_2);
+                   if (isNetworkConnected()==true)
+                   {
+                       Intent intent = new Intent(getApplicationContext(),Delete.class);
+                       startActivity(intent);
+                       overridePendingTransition(R.anim.slider_1,R.anim.slider_2);
+                   }
+                   else
+                   {
+                       Toast.makeText(Menus.this, "No Internet !", Toast.LENGTH_SHORT).show();
+                   }
+
                }
            });
     }
+
+
+
+
+
+    private boolean isNetworkConnected(){
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(MyNotes.CONNECTIVITY_SERVICE);
+        return cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnected();
+    }
+
 }

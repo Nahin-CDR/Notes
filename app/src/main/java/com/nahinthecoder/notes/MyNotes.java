@@ -88,7 +88,9 @@ public class MyNotes extends AppCompatActivity {
                 if(position%2==1)
                 {
                     view.setBackgroundColor(Color.parseColor("#ffffff"));
-                    view.setBackground(getDrawable(R.drawable.note_effect));
+                    view.setBackground(getDrawable(R.drawable.note_effect1));
+                   // view.setTextColor(Color.parseColor("#FF0000"));
+
                 }else{
                     view.setBackgroundColor(Color.parseColor("#ffffff"));
                     view.setBackground(getDrawable(R.drawable.note_effect2));
@@ -196,6 +198,12 @@ public class MyNotes extends AppCompatActivity {
 
             }
         });
+
+        if (isNetworkConnected()!=true)
+        {
+            linearLayout_loading_layout.setVisibility(View.GONE);
+            Toast.makeText(this, "No Internet !", Toast.LENGTH_SHORT).show();
+        }
 
         /** code for hiding loading layout ended **/
 
