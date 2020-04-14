@@ -70,10 +70,10 @@ public class Search extends AppCompatActivity {
 
 
 
-
+        /**
         if(android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.HONEYCOMB) {
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
-        }
+        } **/
 
         listView = (ListView)findViewById( R.id.list_itemViewID );
         arrayAdapter = new ArrayAdapter<String>(this,R.layout.row,arrayList){

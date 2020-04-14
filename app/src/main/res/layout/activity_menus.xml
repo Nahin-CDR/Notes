@@ -91,7 +91,7 @@
                         android:id="@+id/passwordID"
                         android:layout_width="250dp"
                         android:layout_height="35dp"
-                        android:background="@drawable/edit_text_background_green"
+                        android:background="@drawable/defult_button"
                         android:textSize="15sp"
                         android:paddingLeft="10dp"
                         android:inputType="number"
@@ -107,7 +107,7 @@
                     android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
-                    android:background="@drawable/defult_button"
+                    android:background="@drawable/effect"
                     android:enabled="true"
                     android:text="Go"
                     android:textAllCaps="false"
@@ -125,7 +125,7 @@
         android:orientation="vertical"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:background="@drawable/ui"
+        android:background="@drawable/defult_button"
 
         >
 
@@ -137,10 +137,11 @@
             android:fontFamily="sans-serif-light"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/white"
             android:textSize="20dp"
             />
 
+        <!--
         <View
             android:layout_width="match_parent"
             android:layout_gravity="center"
@@ -149,133 +150,150 @@
             android:layout_marginTop="2dp"
             android:layout_height="1dp"
             android:background="@color/white"/>
-
+-->
 
 
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="2"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/defult_button"
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="1"
-                android:layout_margin="15dp"
-                android:gravity="center"
-                android:layout_height="wrap_content">
-                <ImageButton
-                    android:id="@+id/addNoteID"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/add"
-                    style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
-                    android:background="@drawable/effect"
-                    android:padding="5dp"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="Add note"
-                    android:textSize="13sp"
-                    android:layout_marginLeft="0dp"
-                    />
-            </LinearLayout>
 
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:orientation="vertical"
-                android:layout_margin="15dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:layout_height="wrap_content">
-                <ImageButton
-                    android:id="@+id/myNotesID"
+                android:layout_marginTop="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/defult_button"
+                android:orientation="horizontal">
+
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/folder"
-                    style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
-                    android:background="@drawable/effect"
-                    android:padding="5dp"
-                    android:contentDescription="TODO" />
-                <TextView
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_margin="15dp"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+                    <ImageButton
+                        android:id="@+id/addNoteID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/addnote"
+                        style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+                        android:background="@drawable/effect"
+                        android:padding="5dp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="Add note"
+                        android:textSize="13sp"
+                        android:layout_marginLeft="0dp"
+                        />
+                </LinearLayout>
+
+
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="My notes"
-                    android:textSize="13sp"
-                    android:layout_marginLeft="0dp"
-                    />
+                    android:orientation="vertical"
+                    android:layout_margin="15dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+                    <ImageButton
+                        android:id="@+id/myNotesID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/folder"
+                        style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+                        android:background="@drawable/effect"
+                        android:padding="5dp"
+                        android:contentDescription="TODO" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="My notes"
+                        android:textSize="13sp"
+                        android:layout_marginLeft="0dp"
+                        />
+                </LinearLayout>
+
+
             </LinearLayout>
 
 
-        </LinearLayout>
-
-
-
-
-
-
-
-        <LinearLayout
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="2"
-            android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:orientation="vertical"
-                android:layout_weight="1"
-                android:layout_margin="15dp"
-                android:gravity="center"
-                android:layout_height="wrap_content">
-                <ImageButton
-                    android:id="@+id/searchID"
+               android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/defult_button"
+                android:orientation="horizontal">
+
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/search"
-                    style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
-                    android:background="@drawable/effect"
-                    android:padding="5dp"
-                    />
-                <TextView
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_margin="15dp"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+                    <ImageButton
+                        android:id="@+id/searchID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/scrch"
+                        style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+                        android:background="@drawable/effect"
+                        android:padding="5dp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="Search note"
+                        android:textSize="13sp"
+                        android:layout_marginLeft="0dp"
+                        />
+                </LinearLayout>
+
+
+                <LinearLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="Search note"
-                    android:textSize="13sp"
-                    android:layout_marginLeft="0dp"
-                    />
+                    android:orientation="vertical"
+                    android:layout_margin="15dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+                    <ImageButton
+                        android:id="@+id/deleteID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/delete"
+                        style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
+                        android:background="@drawable/effect"
+                        android:padding="5dp"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="Delete note"
+                        android:textSize="13sp"
+                        android:layout_marginLeft="0dp"
+                        />
+                </LinearLayout>
+
+
             </LinearLayout>
 
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:orientation="vertical"
-                android:layout_margin="15dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:layout_height="wrap_content">
-                <ImageButton
-                    android:id="@+id/deleteID"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/delete"
-                    style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
-                    android:background="@drawable/effect"
-                    android:padding="5dp"
-                    />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:hint="Delete note"
-                    android:textSize="13sp"
-                    android:layout_marginLeft="0dp"
-                    />
-            </LinearLayout>
 
 
         </LinearLayout>

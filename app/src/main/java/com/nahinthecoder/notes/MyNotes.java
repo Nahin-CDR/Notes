@@ -71,10 +71,11 @@ public class MyNotes extends AppCompatActivity {
         setContentView(R.layout.activity_my_notes);
         getSupportActionBar().hide();
 
+        /**
         if(android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.HONEYCOMB) {
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE);
         }
-
+        **/
         listView = (ListView)findViewById( R.id.list_itemViewID );
         arrayAdapter = new ArrayAdapter<String>(this,R.layout.row,arrayList){
 
@@ -87,10 +88,10 @@ public class MyNotes extends AppCompatActivity {
                 if(position%2==1)
                 {
                     view.setBackgroundColor(Color.parseColor("#ffffff"));
-                    view.setBackground(getDrawable(R.drawable.addnotes_ui));
+                    view.setBackground(getDrawable(R.drawable.note_effect));
                 }else{
                     view.setBackgroundColor(Color.parseColor("#ffffff"));
-                    view.setBackground(getDrawable(R.drawable.addnotes_ui));
+                    view.setBackground(getDrawable(R.drawable.note_effect2));
                 }
                 Animation animation = AnimationUtils.loadAnimation(getContext(), (position > lastPosition) ? R.anim.move:R.anim.no_animation); //animation for chatting is > "chatting"
                 view.startAnimation(animation);

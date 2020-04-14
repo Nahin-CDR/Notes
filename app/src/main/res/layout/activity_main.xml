@@ -19,7 +19,7 @@
             android:id="@+id/t1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Welcome to your Notebook"
+            android:text="Welcome to your Notebook Pro"
             android:textColor="@color/colorAccent"
             android:textSize="15sp"
             android:fontFamily="sans-serif-light"

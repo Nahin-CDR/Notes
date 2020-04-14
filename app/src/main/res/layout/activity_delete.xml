@@ -30,6 +30,7 @@
             />
 
         <LinearLayout
+            android:id="@+id/deleteBackgroundID"
             android:layout_marginTop="5dp"
             android:layout_width="match_parent"
             android:orientation="vertical"

@@ -28,7 +28,7 @@ public class Delete extends AppCompatActivity {
     Button del_search,confirmDelete;
     DatabaseReference databaseReference;
     LinearLayout linearLayout_loading;
-
+    LinearLayout deleteBackGround;
     LinearLayout noDATAfound;
     String  userPhoneNumber;
     @Override
@@ -43,6 +43,7 @@ public class Delete extends AppCompatActivity {
         confirmDelete = findViewById(R.id.delete_prdoductId);
 
         linearLayout_loading = (LinearLayout)findViewById( R.id.loading_layoutID );
+        deleteBackGround = (LinearLayout)findViewById(R.id.deleteBackgroundID);
         noDATAfound = (LinearLayout)findViewById(R.id.noDataID);
         //getting reference from previous activity
         SharedPreferences sharedPreferences = getSharedPreferences("userPhoneNumberKey", Context.MODE_PRIVATE);
@@ -58,10 +59,11 @@ public class Delete extends AppCompatActivity {
         del_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (deleteText.getText().toString().length()!=0){
+                String inputTopic= deleteText.getText().toString().trim();
+                if (!inputTopic.equals(null) && inputTopic.length()!=0){
                     if(isNetworkConnected()==true){
                         linearLayout_loading.setVisibility( View.VISIBLE );
-                        deleteText.setBackground(getDrawable(R.drawable.defult_button));
+                        deleteBackGround.setBackground(getDrawable(R.drawable.defult_button));
                         findData();
                     }else
                     {
@@ -69,7 +71,7 @@ public class Delete extends AppCompatActivity {
                     }
                 }else {
 
-                    deleteText.setBackground(getDrawable(R.drawable.edit_text_background));
+                    deleteBackGround.setBackground(getDrawable(R.drawable.edit_text_background));
                     Toast.makeText(Delete.this, "You have to enter a topic name", Toast.LENGTH_SHORT).show();
                     linearLayout_loading.setVisibility( View.GONE );
                     // progressDialog.dismiss();
@@ -103,7 +105,7 @@ public class Delete extends AppCompatActivity {
 
     private void deleteData(String proNames) {
         databaseReference.child(proNames).removeValue();
-        Toast.makeText(this, "Topic Delete Successfully", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Topic Deleted Successfully", Toast.LENGTH_SHORT).show();
         deleteName.setText("");
 
         confirmDelete.setVisibility(View.GONE);
