@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -32,6 +33,7 @@ public class Menus extends AppCompatActivity {
     EditText inputPassWord;
     Button login;
     String myPassWord;
+    Button googlePlay;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +49,36 @@ public class Menus extends AppCompatActivity {
         inputPassWord = (EditText)findViewById(R.id.passwordID);
         SharedPreferences sharedPreferences1 = getSharedPreferences("userPassWord", Context.MODE_PRIVATE);
         stored_PassWord = sharedPreferences1.getString("userPassWord","Unknown");
+
+
+        googlePlay = (Button)findViewById(R.id.googlePlayButtonID);
+        googlePlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (isNetworkConnected()==true)
+                {
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse(
+                            "https://play.google.com/store/apps/developer?id=Nahin+thE+Coder"));
+                    intent.setPackage("com.android.vending");
+                    startActivity(intent);
+                    // Intent intent = new Intent(getApplicationContext(),SignIn.class);
+                    // startActivity(intent);
+                    overridePendingTransition(R.anim.myanim2,R.anim.slider_2);
+                }
+                else
+                {
+                    Toast.makeText(Menus.this, "No Internet !", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
+
+
+
+
+
 
         MenuLayout();
 

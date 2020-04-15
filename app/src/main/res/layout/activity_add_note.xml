@@ -13,8 +13,6 @@
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:background="@drawable/addnotes_ui"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
         android:layout_height="match_parent">
         <TextView
             android:layout_width="wrap_content"

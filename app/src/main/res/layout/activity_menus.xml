@@ -13,9 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
         android:visibility="gone"
+        android:layout_margin="10dp"
         android:background="@drawable/defult_button"
         >
         <LinearLayout
@@ -123,8 +122,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp"
         android:background="@drawable/defult_button"
 
         >
@@ -296,6 +293,84 @@
 
 
 
+
+
+
+
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dip"
+                android:layout_weight="1"
+                android:gravity="center|bottom"
+                android:orientation="vertical" >
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_height="wrap_content">
+
+                    <pl.droidsonroids.gif.GifImageView
+                        android:layout_weight="1"
+                        android:layout_marginTop="17dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:src="@drawable/ggle"
+                        />
+
+                    <Button
+                        android:id="@+id/googlePlayButtonID"
+                        android:layout_weight="1"
+                        style="?android:attr/buttonStyleSmall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/note_effect7"
+                        android:layout_margin="10dp"
+                        android:textAllCaps="false"
+                        android:fontFamily="sans-serif-light"
+                        android:layout_gravity="center_horizontal|center"
+                        android:text="Get more apps from this developer" />
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
         </LinearLayout>
 
 
@@ -303,12 +378,6 @@
 
 
 
-
-
-
-
-
-    </LinearLayout>
 
 
 

@@ -13,7 +13,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
-        android:background="@drawable/defult_button"
+        android:background="@drawable/note_effect2"
         android:layout_height="match_parent">
 
         <TextView
@@ -30,7 +30,7 @@
 
         <ScrollView
 
-            android:background="@drawable/defult_button"
+            android:background="@drawable/note_effect1"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -48,7 +48,7 @@
                     android:weightSum="2"
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
-                    android:background="@drawable/defult_button"
+                    android:background="@drawable/note_effect1"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -64,7 +64,7 @@
                             android:layout_height="wrap_content"
                             android:src="@drawable/theme_pic"
                             style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
-                            android:background="@drawable/effect"
+                            android:background="@drawable/note_effect2"
                             android:padding="5dp"
                             />
                         <TextView
@@ -88,9 +88,9 @@
                             android:id="@+id/theme2_ID"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/theme_pic2"
+                            android:src="@drawable/theme_pic"
                             style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
-                            android:background="@drawable/effect"
+                            android:background="@drawable/dark_effect"
                             android:padding="5dp"
                             android:contentDescription="TODO" />
                         <TextView
@@ -115,7 +115,7 @@
                     android:weightSum="2"
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
-                    android:background="@drawable/defult_button"
+                    android:background="@drawable/note_effect2"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -129,9 +129,9 @@
                             android:id="@+id/theme3_ID"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/theme_pic3"
+                            android:src="@drawable/theme_pic"
                             style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
-                            android:background="@drawable/effect"
+                            android:background="@drawable/note_effect4"
                             android:padding="5dp"
                             />
                         <TextView
@@ -155,9 +155,9 @@
                             android:id="@+id/theme4_ID"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/theme_pic4"
+                            android:src="@drawable/theme_pic"
                             style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
-                            android:background="@drawable/effect"
+                            android:background="@drawable/note_effect1"
                             android:padding="5dp"
                             android:contentDescription="TODO" />
                         <TextView
@@ -180,7 +180,7 @@
                     android:weightSum="2"
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
-                    android:background="@drawable/defult_button"
+                    android:background="@drawable/note_effect1"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -194,9 +194,9 @@
                             android:id="@+id/theme5_ID"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/theme_pic3"
+                            android:src="@drawable/theme_pic"
                             style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
-                            android:background="@drawable/effect"
+                            android:background="@drawable/note_effect3"
                             android:padding="5dp"
                             />
                         <TextView
@@ -220,9 +220,9 @@
                             android:id="@+id/theme6_ID"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/theme_pic4"
+                            android:src="@drawable/theme_pic"
                             style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
-                            android:background="@drawable/effect"
+                            android:background="@drawable/note_effect5"
                             android:padding="5dp"
                             android:contentDescription="TODO" />
                         <TextView
@@ -244,7 +244,7 @@
                     android:weightSum="2"
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
-                    android:background="@drawable/defult_button"
+                    android:background="@drawable/note_effect2"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -258,9 +258,9 @@
                             android:id="@+id/theme7_ID"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/theme_pic3"
+                            android:src="@drawable/theme_pic"
                             style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
-                            android:background="@drawable/effect"
+                            android:background="@drawable/ui"
                             android:padding="5dp"
                             />
                         <TextView
@@ -284,9 +284,9 @@
                             android:id="@+id/theme8_ID"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/theme_pic4"
+                            android:src="@drawable/theme_pic"
                             style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
-                            android:background="@drawable/effect"
+                            android:background="@drawable/addnotes_ui"
                             android:padding="5dp"
                             android:contentDescription="TODO" />
                         <TextView
@@ -306,9 +306,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:weightSum="2"
+
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
-                    android:background="@drawable/defult_button"
+                    android:background="@drawable/note_effect1"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -322,9 +323,9 @@
                             android:id="@+id/theme9_ID"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/theme_pic3"
+                            android:src="@drawable/theme_pic"
                             style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
-                            android:background="@drawable/effect"
+                            android:background="@drawable/note_effect6"
                             android:padding="5dp"
                             />
                         <TextView
@@ -348,9 +349,9 @@
                             android:id="@+id/theme10_ID"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/theme_pic4"
+                            android:src="@drawable/theme_pic"
                             style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
-                            android:background="@drawable/effect"
+                            android:background="@drawable/defult_button"
                             android:padding="5dp"
                             android:contentDescription="TODO" />
                         <TextView
@@ -372,7 +373,7 @@
                     android:weightSum="2"
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
-                    android:background="@drawable/defult_button"
+                    android:background="@drawable/note_effect2"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -386,9 +387,9 @@
                             android:id="@+id/theme11_ID"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/theme_pic3"
+                            android:src="@drawable/theme_pic"
                             style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
-                            android:background="@drawable/effect"
+                            android:background="@drawable/note_effect7"
                             android:padding="5dp"
                             />
                         <TextView
@@ -412,9 +413,9 @@
                             android:id="@+id/theme12_ID"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/theme_pic4"
+                            android:src="@drawable/theme_pic"
                             style="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored"
-                            android:background="@drawable/effect"
+                            android:background="@drawable/note_effect5"
                             android:padding="5dp"
                             android:contentDescription="TODO" />
                         <TextView

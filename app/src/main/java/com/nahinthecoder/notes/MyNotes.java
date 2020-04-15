@@ -148,7 +148,7 @@ public class MyNotes extends AppCompatActivity {
                          view.setBackgroundColor(Color.parseColor("#ffffff"));
                          view.setBackground(getDrawable(R.drawable.dark_effect));
                      }
-                     Animation animation = AnimationUtils.loadAnimation(getContext(), (position > lastPosition) ? R.anim.move:R.anim.no_animation); //animation for chatting is > "chatting"
+                     Animation animation = AnimationUtils.loadAnimation(getContext(), (position > lastPosition) ? R.anim.myanim:R.anim.myanim2); //animation for chatting is > "chatting"
                      view.startAnimation(animation);
                      lastPosition = position;
                      return view;
@@ -182,7 +182,7 @@ public class MyNotes extends AppCompatActivity {
                          view.setBackgroundColor(Color.parseColor("#ffffff"));
                          view.setBackground(getDrawable(R.drawable.note_effect4));
                      }
-                     Animation animation = AnimationUtils.loadAnimation(getContext(), (position > lastPosition) ? R.anim.move:R.anim.no_animation); //animation for chatting is > "chatting"
+                     Animation animation = AnimationUtils.loadAnimation(getContext(), (position > lastPosition) ? R.anim.chatting:R.anim.chatting); //animation for chatting is > "chatting"
                      view.startAnimation(animation);
                      lastPosition = position;
                      return view;
@@ -218,7 +218,7 @@ public class MyNotes extends AppCompatActivity {
                          view.setBackgroundColor(Color.parseColor("#ffffff"));
                          view.setBackground(getDrawable(R.drawable.note_effect2));
                      }
-                     Animation animation = AnimationUtils.loadAnimation(getContext(), (position > lastPosition) ? R.anim.move:R.anim.no_animation); //animation for chatting is > "chatting"
+                     Animation animation = AnimationUtils.loadAnimation(getContext(), (position > lastPosition) ? R.anim.chatting:R.anim.chatting); //animation for chatting is > "chatting"
                      view.startAnimation(animation);
                      lastPosition = position;
                      return view;
@@ -255,7 +255,7 @@ public class MyNotes extends AppCompatActivity {
                          view.setBackgroundColor(Color.parseColor("#ffffff"));
                          view.setBackground(getDrawable(R.drawable.addnotes_ui));
                      }
-                     Animation animation = AnimationUtils.loadAnimation(getContext(), (position > lastPosition) ? R.anim.move:R.anim.no_animation); //animation for chatting is > "chatting"
+                     Animation animation = AnimationUtils.loadAnimation(getContext(), (position > lastPosition) ? R.anim.myanim:R.anim.myanim2); //animation for chatting is > "chatting"
                      view.startAnimation(animation);
                      lastPosition = position;
                      return view;
@@ -328,7 +328,7 @@ public class MyNotes extends AppCompatActivity {
                          view.setBackgroundColor(Color.parseColor("#ffffff"));
                          view.setBackground(getDrawable(R.drawable.note_effect5));
                      }
-                     Animation animation = AnimationUtils.loadAnimation(getContext(), (position > lastPosition) ? R.anim.move:R.anim.no_animation); //animation for chatting is > "chatting"
+                     Animation animation = AnimationUtils.loadAnimation(getContext(), (position > lastPosition) ? R.anim.slider_1:R.anim.myanim2); //animation for chatting is > "chatting"
                      view.startAnimation(animation);
                      lastPosition = position;
                      return view;
@@ -365,7 +365,7 @@ public class MyNotes extends AppCompatActivity {
                          view.setBackgroundColor(Color.parseColor("#ffffff"));
                          view.setBackground(getDrawable(R.drawable.note_effect5));
                      }
-                     Animation animation = AnimationUtils.loadAnimation(getContext(), (position > lastPosition) ? R.anim.move:R.anim.no_animation); //animation for chatting is > "chatting"
+                     Animation animation = AnimationUtils.loadAnimation(getContext(), (position > lastPosition) ? R.anim.myanim2:R.anim.slider_1); //animation for chatting is > "chatting"
                      view.startAnimation(animation);
                      lastPosition = position;
                      return view;
@@ -400,7 +400,7 @@ public class MyNotes extends AppCompatActivity {
                          view.setBackgroundColor(Color.parseColor("#ffffff"));
                          view.setBackground(getDrawable(R.drawable.note_effect6));
                      }
-                     Animation animation = AnimationUtils.loadAnimation(getContext(), (position > lastPosition) ? R.anim.move:R.anim.no_animation); //animation for chatting is > "chatting"
+                     Animation animation = AnimationUtils.loadAnimation(getContext(), (position > lastPosition) ? R.anim.myanim2:R.anim.myanim2); //animation for chatting is > "chatting"
                      view.startAnimation(animation);
                      lastPosition = position;
                      return view;
@@ -437,7 +437,7 @@ public class MyNotes extends AppCompatActivity {
                          view.setBackgroundColor(Color.parseColor("#ffffff"));
                          view.setBackground(getDrawable(R.drawable.defult_button));
                      }
-                     Animation animation = AnimationUtils.loadAnimation(getContext(), (position > lastPosition) ? R.anim.move:R.anim.no_animation); //animation for chatting is > "chatting"
+                     Animation animation = AnimationUtils.loadAnimation(getContext(), (position > lastPosition) ? R.anim.myanim:R.anim.myanim); //animation for chatting is > "chatting"
                      view.startAnimation(animation);
                      lastPosition = position;
                      return view;
@@ -464,15 +464,48 @@ public class MyNotes extends AppCompatActivity {
                      if(position%2==1)
                      {
                          view.setBackgroundColor(Color.parseColor("#ffffff"));
-
                          view.setBackground(getDrawable(R.drawable.note_effect7));
-
 
                      }else{
                          view.setBackgroundColor(Color.parseColor("#ffffff"));
                          view.setBackground(getDrawable(R.drawable.note_effect7));
                      }
-                     Animation animation = AnimationUtils.loadAnimation(getContext(), (position > lastPosition) ? R.anim.move:R.anim.no_animation); //animation for chatting is > "chatting"
+                     Animation animation = AnimationUtils.loadAnimation(getContext(), (position > lastPosition) ? R.anim.myanim2:R.anim.myanim); //animation for chatting is > "chatting"
+                     view.startAnimation(animation);
+                     lastPosition = position;
+                     return view;
+                 }
+             };
+             listView.setAdapter( arrayAdapter );
+         }
+
+
+
+
+         else if(myTheme.equals("11"))
+         {
+
+             mynotesFullLayout.setBackground(getDrawable(R.drawable.note_effect7));
+             title.setTextColor(Color.parseColor("#ffffff"));
+
+             arrayAdapter = new ArrayAdapter<String>(this,R.layout.row,arrayList){
+
+                 @NonNull
+                 @Override
+                 public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+
+
+                     View view = super.getView( position, convertView, parent );
+                     if(position%2==1)
+                     {
+                         view.setBackgroundColor(Color.parseColor("#ffffff"));
+                         view.setBackground(getDrawable(R.drawable.note_effect5));
+
+                     }else{
+                         view.setBackgroundColor(Color.parseColor("#ffffff"));
+                         view.setBackground(getDrawable(R.drawable.note_effect7));
+                     }
+                     Animation animation = AnimationUtils.loadAnimation(getContext(), (position > lastPosition) ? R.anim.myanim2:R.anim.myanim); //animation for chatting is > "chatting"
                      view.startAnimation(animation);
                      lastPosition = position;
                      return view;
@@ -489,114 +522,12 @@ public class MyNotes extends AppCompatActivity {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         linearLayout_loading_layout.setVisibility(View.VISIBLE);
         layout_for_showing_notes.setVisibility( View.VISIBLE );
         showNotes();
 
 
 
-
-
-
-       // getPassWord_layout.setVisibility( View.VISIBLE );
 
 
 
@@ -690,18 +621,11 @@ public class MyNotes extends AppCompatActivity {
             }
 
         } );
-
-
     }
-
-
-
-
 
     private boolean isNetworkConnected(){
         ConnectivityManager cm = (ConnectivityManager) getSystemService(MyNotes.CONNECTIVITY_SERVICE);
         return cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnected();
     }
-
-
+    
 }
