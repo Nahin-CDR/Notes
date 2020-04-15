@@ -107,7 +107,7 @@ public class Menus extends AppCompatActivity {
                public void onClick(View v) {
                    if (isNetworkConnected()==true)
                    {
-                       Intent intent = new Intent(getApplicationContext(),MyNotes.class);
+                       Intent intent = new Intent(getApplicationContext(),Themes.class);
                        startActivity(intent);
                        overridePendingTransition(R.anim.slider_1,R.anim.slider_2);
                    }

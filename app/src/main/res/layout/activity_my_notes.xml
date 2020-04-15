@@ -6,69 +6,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/white"
-    android:layout_marginLeft="5dp"
-    android:layout_marginRight="5dp"
     tools:context=".MyNotes">
 
-
-    <!-- inactive code-->
-    <ScrollView
-        android:id="@+id/getPassWord_linear_layoutID"
-        android:background="@drawable/defult_button"
-        android:layout_width="match_parent"
-        android:visibility="gone"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_gravity="center"
-            >
-            <pl.droidsonroids.gif.GifImageView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/hello"
-                />
-
-            <EditText
-                android:id="@+id/myPasswordID"
-                android:layout_width="match_parent"
-                android:layout_height="35dp"
-                android:layout_margin="30dp"
-                android:paddingLeft="10dp"
-                android:fontFamily="sans-serif-light"
-                android:hint="Give master password"
-                android:maxLength="8"
-                android:inputType="number"
-                android:background="@drawable/addnotes_ui"
-                />
-
-            <Button
-                android:id="@+id/get_PassWord_button_id"
-                android:layout_marginTop="02dp"
-                android:layout_width="wrap_content"
-                android:layout_height="35dp"
-                android:background="@drawable/ui"
-                android:text="Go"
-                android:fontFamily="sans-serif-light"
-                android:textSize="15sp"
-                android:textColor="#670B0B"
-                android:textAllCaps="false"
-                android:layout_gravity="center_horizontal"
-                />
-        </LinearLayout>
-    </ScrollView>
-
-
-
-
-<!-- active code starts from here-->
-
     <LinearLayout
+        android:id="@+id/myNotesFullLayoutID"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:background="@drawable/addnotes_ui"
+        android:background="@drawable/note_effect3"
         >
 
         <LinearLayout
@@ -77,6 +22,7 @@
             android:gravity="center"
             android:layout_height="wrap_content">
             <TextView
+                android:id="@+id/titleID"
                 android:textColor="@color/white"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -93,7 +39,7 @@
         <LinearLayout
             android:id="@+id/showNotesLayoutID"
             android:layout_width="match_parent"
-            android:background="@drawable/addnotes_ui"
+            android:background="@drawable/ui"
             android:orientation="vertical"
             android:layout_height="match_parent">
 
