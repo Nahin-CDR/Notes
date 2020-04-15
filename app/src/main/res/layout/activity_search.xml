@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/addnotes_ui"
-    android:layout_marginRight="5dp"
-    android:layout_marginLeft="5dp"
     tools:context=".Search">
 
     <LinearLayout

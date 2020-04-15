@@ -13,7 +13,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:orientation="vertical"
-        android:background="@drawable/note_effect2"
+        android:background="@drawable/addnotes_ui"
         android:layout_height="match_parent">
 
         <TextView
@@ -25,12 +25,12 @@
             android:layout_margin="10dp"
             android:textSize="20sp"
             android:fontFamily="sans-serif-light"
-            android:textColor="@color/white"
+            android:textColor="#FF0000"
             />
 
         <ScrollView
 
-            android:background="@drawable/note_effect1"
+            android:background="@drawable/note_effect"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -46,9 +46,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:weightSum="2"
+                    android:background="@drawable/note_effect"
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
-                    android:background="@drawable/note_effect1"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -70,7 +70,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:hint="Theme 1"
+                            android:textColor="#FF0000"
+                            android:text="Theme 1"
+                            android:fontFamily="sans-serif-light"
                             android:textSize="13sp"
                             android:layout_marginLeft="0dp"
                             />
@@ -96,7 +98,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:hint="Theme 2"
+                            android:textColor="#FF0000"
+                            android:text="Theme 2"
+                            android:fontFamily="sans-serif-light"
                             android:textSize="13sp"
                             android:layout_marginLeft="0dp"
                             />
@@ -115,7 +119,7 @@
                     android:weightSum="2"
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
-                    android:background="@drawable/note_effect2"
+                    android:background="@drawable/note_effects"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -137,7 +141,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:hint="Theme 3"
+                            android:text="Theme 3"
+                            android:fontFamily="sans-serif-light"
+                            android:textColor="#FF0000"
                             android:textSize="13sp"
                             android:layout_marginLeft="0dp"
                             />
@@ -163,7 +169,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:hint="Theme 4"
+                            android:text="Theme 4"
+                            android:fontFamily="sans-serif-light"
+                            android:textColor="#FF0000"
                             android:textSize="13sp"
                             android:layout_marginLeft="0dp"
                             />
@@ -180,7 +188,7 @@
                     android:weightSum="2"
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
-                    android:background="@drawable/note_effect1"
+                    android:background="@drawable/note_effect"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -202,8 +210,10 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:hint="Theme 5"
+                            android:text="Theme 5"
                             android:textSize="13sp"
+                            android:fontFamily="sans-serif-light"
+                            android:textColor="#FF0000"
                             android:layout_marginLeft="0dp"
                             />
                     </LinearLayout>
@@ -228,7 +238,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:hint="Theme 6"
+                            android:text="Theme 6"
+                            android:fontFamily="sans-serif-light"
+                            android:textColor="#FF0000"
                             android:textSize="13sp"
                             android:layout_marginLeft="0dp"
                             />
@@ -244,7 +256,7 @@
                     android:weightSum="2"
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
-                    android:background="@drawable/note_effect2"
+                    android:background="@drawable/note_effects"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -266,7 +278,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:hint="Theme 7"
+                            android:text="Theme 7"
+                            android:fontFamily="sans-serif-light"
+                            android:textColor="#FF0000"
                             android:textSize="13sp"
                             android:layout_marginLeft="0dp"
                             />
@@ -292,7 +306,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:hint="Theme 8"
+                            android:text="Theme 8"
+                            android:fontFamily="sans-serif-light"
+                            android:textColor="#FF0000"
                             android:textSize="13sp"
                             android:layout_marginLeft="0dp"
                             />
@@ -309,7 +325,7 @@
 
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
-                    android:background="@drawable/note_effect1"
+                    android:background="@drawable/note_effect"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -331,7 +347,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:hint="Theme 9"
+                            android:text="Theme 9"
+                            android:fontFamily="sans-serif-light"
+                            android:textColor="#FF0000"
                             android:textSize="13sp"
                             android:layout_marginLeft="0dp"
                             />
@@ -357,7 +375,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:hint="Theme 10"
+                            android:text="Theme 10"
+                            android:fontFamily="sans-serif-light"
+                            android:textColor="#FF0000"
                             android:textSize="13sp"
                             android:layout_marginLeft="0dp"
                             />
@@ -373,7 +393,7 @@
                     android:weightSum="2"
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
-                    android:background="@drawable/note_effect2"
+                    android:background="@drawable/note_effects"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -395,8 +415,10 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:hint="Theme 11"
+                            android:text="Theme 11"
                             android:textSize="13sp"
+                            android:fontFamily="sans-serif-light"
+                            android:textColor="#FF0000"
                             android:layout_marginLeft="0dp"
                             />
                     </LinearLayout>
@@ -421,7 +443,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:hint="Theme 12"
+                            android:text="Theme 12"
+                            android:fontFamily="sans-serif-light"
+                            android:textColor="#FF0000"
                             android:textSize="13sp"
                             android:layout_marginLeft="0dp"
                             />

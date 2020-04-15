@@ -167,7 +167,7 @@
                 android:weightSum="2"
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
-                android:background="@drawable/defult_button"
+
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -189,7 +189,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="Add note"
+                        android:text="Add note"
+                        android:textColor="@color/white"
                         android:textSize="13sp"
                         android:layout_marginLeft="0dp"
                         />
@@ -215,7 +216,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="My notes"
+                        android:text="My notes"
+                        android:textColor="@color/white"
                         android:textSize="13sp"
                         android:layout_marginLeft="0dp"
                         />
@@ -233,7 +235,7 @@
                 android:weightSum="2"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:background="@drawable/defult_button"
+
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -255,7 +257,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="Search note"
+                        android:textColor="@color/white"
+                        android:text="Search note"
                         android:textSize="13sp"
                         android:layout_marginLeft="0dp"
                         />
@@ -281,7 +284,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="Delete note"
+                        android:text="Delete note"
+                        android:textColor="@color/white"
                         android:textSize="13sp"
                         android:layout_marginLeft="0dp"
                         />

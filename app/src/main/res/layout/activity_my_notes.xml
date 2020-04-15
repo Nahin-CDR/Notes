@@ -87,6 +87,7 @@
             <!--list view for showing data -->
 
             <ListView
+
                 android:layout_width="match_parent"
                 android:id="@+id/list_itemViewID"
                 android:transcriptMode="alwaysScroll"

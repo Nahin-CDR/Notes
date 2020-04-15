@@ -13,7 +13,8 @@
         android:roundIcon="@drawable/icn"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Themes"></activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".Themes" />
         <activity android:name=".WeclomeScreen" />
         <activity android:name=".Delete" />
         <activity android:name=".Search" />
@@ -22,7 +23,8 @@
         <activity android:name=".Menus" />
         <activity android:name=".OTPActivity" />
         <activity android:name=".Home" />
-        <activity android:name=".MainActivity">
+
+            <activity android:name=".WelcomeScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
