@@ -1,12 +1,23 @@
 <resources>
     <string name="app_name">Notes</string>
-    <string name="agree_text">I am agree to store my
-        notes in the cloud</string>
+    <string name="agree_text">I am agree with </string>
     <string name="verification">
         A verification code has been sent to your phone.Please check it and enter here.
         Some times it may take 1 or 2 minutes to arrive .You should wait on that case.
     </string>
     <string name="alerts">
         you have to enter your master password before accessing notes
+    </string>
+    <string name="termsAndConditions">
+        This is a smart professional cloud notebook with various themes and animations.\n
+>>Unfortunately if you lose your mobile still you can retrieve your old notes from cloud by logging in with the number you created your account before.\n\n
+>>No data loss\n
+Because, all your notes are saved in cloud safely and you can retrieve it from anywhere by your personal phone number that you used before creating your NoteBook ID . In that case you have to verify again yourself that you own that number.
+\n\n
+>>No one can access your notes\n
+Because they have to need your personal mobile number and verify to log in your notebook ID .
+\n\n
+>>All are secured with master password\n
+Because When you set your profile you have to set a master password that will protect your notes form un authorised access of people
     </string>
 </resources>

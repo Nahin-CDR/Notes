@@ -22,6 +22,8 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.ScrollView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -39,10 +41,14 @@ public class MainActivity extends AppCompatActivity {
     boolean correctNumber;
     FirebaseAuth mAuth;
 
-    private Button verifyButton;
+   Button agreeWithTermAndConditionsButton;
 
+    ScrollView mainLayout;
     String identity="";
     String mobile;
+
+    TextView termsAndConditions;
+    ScrollView termAndConditionsLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +60,33 @@ public class MainActivity extends AppCompatActivity {
         checkBox = findViewById(R.id.checkbox_id);
         numberPhone = findViewById(R.id.mobile_number_ID);
         verify = findViewById(R.id.verify_button_id);
+
+        termsAndConditions = (TextView)findViewById(R.id.termsAndConditionsTextID);
+        mainLayout = (ScrollView)findViewById(R.id.mainScrollViewLayoutID);
+        mainLayout.setVisibility(View.VISIBLE);
+
+        termAndConditionsLayout = (ScrollView)findViewById(R.id.termsAndConditionsLayoutID);
+
+        termsAndConditions.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mainLayout.setVisibility(View.GONE);
+                termAndConditionsLayout.setVisibility(View.VISIBLE);
+            }
+        });
+
+        agreeWithTermAndConditionsButton = (Button)findViewById(R.id.agreeButtonID);
+        agreeWithTermAndConditionsButton.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               termAndConditionsLayout.setVisibility(View.GONE);
+               mainLayout.setVisibility(View.VISIBLE);
+           }
+        });
+
+
+
+
 
 
 
@@ -82,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
                     {
                         SharedPreferences sharedPreferences = getSharedPreferences( "userPhoneNumberKey", Context.MODE_PRIVATE );
                         SharedPreferences.Editor editor = sharedPreferences.edit();
-                        editor.putString( "userPhoneNumberKey",mobile );
+                        editor.putString("userPhoneNumberKey",mobile );
                         editor.commit();
 
                         Intent intent = new Intent(MainActivity.this,OTPActivity.class);
@@ -122,11 +155,6 @@ public class MainActivity extends AppCompatActivity {
 
 
                 //code
-
-
-
-
-
 
 
             }
