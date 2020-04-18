@@ -93,8 +93,6 @@
                     android:background="@drawable/addnotes_ui"
                     android:hint="My Topic"/>
 
-
-
                 <!--Date insertion ends -->
 
 
@@ -116,8 +114,6 @@
                     android:hint="Write note here"/>
 
 
-
-
                 <LinearLayout
                     android:layout_marginTop="20dp"
                     android:layout_width="match_parent"
@@ -130,7 +126,7 @@
                         android:layout_marginTop="10dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/addnotes_ui"
+                        android:background="@drawable/note_effect"
                         android:text="Add"
                         android:textSize="18sp"
                         android:fontFamily="sans-serif-light"

@@ -59,7 +59,7 @@
                     android:layout_marginTop="10dp"
                     android:layout_gravity="center"
                     android:id="@+id/del_search_button"
-                    android:background="@drawable/defult_button"
+                    android:background="@drawable/effect"
                     android:textColor="#6A0101"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
