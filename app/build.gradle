@@ -9,8 +9,8 @@ android {
         applicationId "com.nahinthecoder.notes"
         minSdkVersion 23
         targetSdkVersion 29
-        versionCode 1
-        versionName "1.0" //notes123
+        versionCode 3
+        versionName "1.02" //notes123
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

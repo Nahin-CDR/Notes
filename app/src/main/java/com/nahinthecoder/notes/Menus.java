@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.Uri;
@@ -39,6 +40,20 @@ public class Menus extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menus);
         getSupportActionBar().hide();
+
+
+
+
+       // setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED); // Make to run your application only in portrait mode
+        //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE); // Make to run your application only in LANDSCAPE mode
+      //  setContentView(R.layout.disable_android_orientation_change);
+
+
+      //  setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);
+     //   setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
+
+
+
         passWordLayout = (LinearLayout)findViewById(R.id.inputPasswordLinearLayoutID);
         passWordLayout.setVisibility(View.VISIBLE);
         id = (TextView) findViewById(R.id.nameID);

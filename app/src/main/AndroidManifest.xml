@@ -13,18 +13,19 @@
         android:roundIcon="@drawable/icn"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"></activity>
-        <activity android:name=".Themes" />
-        <activity android:name=".WeclomeScreen" />
-        <activity android:name=".Delete" />
-        <activity android:name=".Search" />
-        <activity android:name=".MyNotes" />
-        <activity android:name=".AddNote" />
-        <activity android:name=".Menus" />
-        <activity android:name=".OTPActivity" />
-        <activity android:name=".Home" />
+        <activity
+            android:name=".MainActivity" android:screenOrientation="locked"/>
+        <activity android:name=".Themes" android:screenOrientation="locked"/>
+        <activity android:name=".WeclomeScreen" android:screenOrientation="locked"/>
+        <activity android:name=".Delete" android:screenOrientation="locked"/>
+        <activity android:name=".Search" android:screenOrientation="locked"/>
+        <activity android:name=".MyNotes" android:screenOrientation="locked"/>
+        <activity android:name=".AddNote" android:screenOrientation="locked"/>
+        <activity android:name=".Menus"  android:screenOrientation="locked"/>
+        <activity android:name=".OTPActivity" android:screenOrientation="locked" />
+        <activity android:name=".Home" android:screenOrientation="locked"/>
 
-            <activity android:name=".WelcomeScreen">
+            <activity android:name=".WelcomeScreen" android:screenOrientation="locked">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -93,7 +93,7 @@
                         android:background="@drawable/defult_button"
                         android:textSize="15sp"
                         android:paddingLeft="10dp"
-                        android:inputType="number"
+                        android:inputType="textPassword"
                         android:maxLength="8"
                         android:hint="master password"
                         android:layout_marginRight="30dp"
