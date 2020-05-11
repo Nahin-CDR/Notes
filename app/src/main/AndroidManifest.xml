@@ -16,7 +16,6 @@
         <activity
             android:name=".MainActivity" android:screenOrientation="locked"/>
         <activity android:name=".Themes" android:screenOrientation="locked"/>
-        <activity android:name=".WeclomeScreen" android:screenOrientation="locked"/>
         <activity android:name=".Delete" android:screenOrientation="locked"/>
         <activity android:name=".Search" android:screenOrientation="locked"/>
         <activity android:name=".MyNotes" android:screenOrientation="locked"/>

@@ -9,11 +9,14 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class WelcomeScreen extends AppCompatActivity {
     private ImageView img;
     TextView text;
+    TextView des;
+    LinearLayout textLinear;
 
     private static int SPLASH_SCREEN_TIME_OUT = 4000;
     @Override
@@ -21,10 +24,11 @@ public class WelcomeScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome_screen);
 
-
         getSupportActionBar().hide();
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
+        des = (TextView)findViewById(R.id.textID);
+        textLinear = (LinearLayout)findViewById(R.id.textLinearID);
 
         /** hiding title bar  and action bar starts **/
 
@@ -35,15 +39,15 @@ public class WelcomeScreen extends AppCompatActivity {
 
 
         text = (TextView)findViewById(R.id.textMS);
-        img =(ImageView)findViewById(R.id.img);
+       // img =(ImageView)findViewById(R.id.img);
 
         Animation myanimation1 = AnimationUtils.loadAnimation(this,R.anim.myanim);
         Animation myanimation2 = AnimationUtils.loadAnimation(this,R.anim.myanim2);
 
-        img.startAnimation(myanimation1);
+
         text.startAnimation(myanimation2);
         /** Animation Code Ends **/
-
+        textLinear.startAnimation(myanimation1);
 
 
 
@@ -66,14 +70,6 @@ public class WelcomeScreen extends AppCompatActivity {
                 finish();
             }
         },SPLASH_SCREEN_TIME_OUT);
-
-
-
-
-
-
-
-
 
 
 
