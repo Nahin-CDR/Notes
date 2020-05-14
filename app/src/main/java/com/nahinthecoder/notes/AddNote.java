@@ -158,18 +158,43 @@ public class AddNote extends AppCompatActivity {
 
                     if(isNetworkConnected()==true){
 
-                        AddData sendData = new AddData(user_topic,user_note,current_date,current_time);
-                        requestRf.child(current_time).setValue(sendData);
-                        Toast.makeText(AddNote.this, "Added Successfully", Toast.LENGTH_SHORT).show();
-                        topic.setText("");
-                        note.setText("");
-                        scrollView.setBackground(getDrawable(R.drawable.addnotes_ui));
-                        topic.setBackground(getDrawable(R.drawable.addnotes_ui));
-                        //dateTimeLinearLayout.setBackground(getDrawable(R.drawable.addnotes_ui));
-                        note.setBackground(getDrawable(R.drawable.addnotes_ui));
-                        codefor_time();//called this function again because there is a chance to change this
-                        codefor_date();//called this function again because there is a chance to change this
-                        //so every time date and time will be checked to update
+                        if(user_topic.contains(".") || user_topic.contains("/") || user_topic.contains("#") || user_topic.contains("&") ||
+                                user_topic.contains("%") || user_topic.contains("₩") || user_topic.contains("@") || user_topic.contains("$") ||
+                                user_topic.contains("€") || user_topic.contains("*") || user_topic.contains("£") || user_topic.contains("¥")) {
+
+
+                            Toast.makeText(AddNote.this, "Special character cannot be used in topic !", Toast.LENGTH_LONG).show();
+                            topic.setBackground(getDrawable(R.drawable.edit_text_background));
+
+
+                        }
+                        else{
+
+                            if(user_topic.length()>=5)
+                            {
+                                AddData sendData = new AddData(user_topic,user_note,current_date,current_time);
+                                requestRf.child(user_topic).setValue(sendData);
+                                Toast.makeText(AddNote.this, "Added Successfully", Toast.LENGTH_SHORT).show();
+                                topic.setText("");
+                                note.setText("");
+                                scrollView.setBackground(getDrawable(R.drawable.addnotes_ui));
+                                topic.setBackground(getDrawable(R.drawable.addnotes_ui));
+                                //dateTimeLinearLayout.setBackground(getDrawable(R.drawable.addnotes_ui));
+                                note.setBackground(getDrawable(R.drawable.addnotes_ui));
+                                codefor_time();//called this function again because there is a chance to change this
+                                codefor_date();//called this function again because there is a chance to change this
+                                //so every time date and time will be checked to update
+                            }
+                            else
+                            {
+                                Toast.makeText(AddNote.this, "Topic length is too short !", Toast.LENGTH_LONG).show();
+                                topic.setBackground(getDrawable(R.drawable.edit_text_background));
+
+                            }
+
+                        }
+
+
                     }
                     else
                     {

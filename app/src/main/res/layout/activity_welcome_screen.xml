@@ -11,7 +11,7 @@
 
     <TextView
 
-        android:background="@drawable/note_effect"
+
         android:textColor="#E31506"
         android:textSize="45sp"
         android:fontFamily="cursive"
@@ -24,29 +24,38 @@
     />
 
     <LinearLayout
-        android:id="@+id/textLinearID"
-        android:orientation="vertical"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="30dp"
+        android:id="@+id/firstID"
         android:background="@drawable/note_effect"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:gravity="center"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textID"
-            android:gravity="center"
-            android:layout_gravity="center"
+        <LinearLayout
+            android:id="@+id/textLinearID"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/note_effect"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="cursive"
-            android:textSize="25sp"
-            android:text="keep your words alive !"
-            />
+            android:gravity="center"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textID"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="cursive"
+                android:textSize="25sp"
+                android:text="keep your words alive !"
+                />
 
 
+
+        </LinearLayout>
 
     </LinearLayout>
 

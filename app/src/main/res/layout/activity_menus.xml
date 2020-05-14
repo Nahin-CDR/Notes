@@ -5,17 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/white"
+    android:background="@drawable/password_effect"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginBottom="10dp"
     tools:context=".Menus">
 
+
+    <!--Layout for password -->
     <LinearLayout
+        android:visibility="gone"
         android:id="@+id/inputPasswordLinearLayoutID"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:visibility="gone"
-        android:layout_margin="10dp"
-        android:background="@drawable/defult_button"
         >
         <LinearLayout
             android:orientation="vertical"
@@ -25,7 +28,7 @@
             <TextView
                 android:textAlignment="center"
                 android:text="Hi"
-                android:textColor="@color/white"
+                android:textColor="#090909"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="18sp"
@@ -36,6 +39,7 @@
                 android:textSize="20dp"
                 android:layout_marginTop="5dp"
                 android:textAlignment="center"
+                android:textColor="#0E9714"
                 android:id="@+id/nameID"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
@@ -47,77 +51,90 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:textAlignment="center"
-                android:textColor="@color/white"/>
+                android:textColor="@color/colorAccent2"/>
 
             <pl.droidsonroids.gif.GifImageView
-                android:layout_width="wrap_content"
+                android:layout_width="35dp"
                 android:layout_gravity="center"
-                android:layout_height="wrap_content"
+                android:layout_height="35dp"
                 android:src="@drawable/hello"
                 />
 
 
         </LinearLayout>
 
-        <ScrollView
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_margin="0dp"
             android:layout_height="match_parent">
 
 
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_gravity="center"
-                android:gravity="center"
+            <ScrollView
+                android:background="@drawable/password"
                 android:layout_width="match_parent"
+                android:layout_marginLeft="1dp"
+                android:layout_marginRight="1dp"
                 android:layout_height="match_parent">
 
+
                 <LinearLayout
-                    android:layout_marginTop="10dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    >
-                    <ImageView
-                        android:layout_marginTop="5dp"
-                        android:layout_width="30dp"
-                        android:layout_height="25dp"
-                        android:src="@drawable/key"
-                        />
-                    <EditText
-                        android:id="@+id/passwordID"
-                        android:layout_width="250dp"
-                        android:layout_height="35dp"
-                        android:background="@drawable/defult_button"
-                        android:textSize="15sp"
-                        android:paddingLeft="10dp"
-                        android:inputType="textPassword"
-                        android:maxLength="8"
-                        android:hint="master password"
-                        android:layout_marginRight="30dp"
-                        android:fontFamily="sans-serif-light"
-                        />
-                </LinearLayout>
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-                <Button
-                    android:id="@+id/loginID"
-                    android:layout_width="120dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:background="@drawable/effect"
-                    android:enabled="true"
-                    android:text="Go"
-                    android:textAllCaps="false"
-                    android:textColor="#000000"
-                    android:textSize="15sp" />
-            </LinearLayout>
-        </ScrollView>
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        >
+                        <ImageView
+                            android:layout_marginTop="2dp"
+                            android:layout_width="30dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/key"
+                            />
+                        <EditText
+                            android:id="@+id/passwordID"
+                            android:layout_width="250dp"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:paddingLeft="10dp"
+                            android:inputType="textPassword"
+                            android:maxLength="8"
+                            android:hint="master password"
+                            android:layout_marginRight="30dp"
+                            android:fontFamily="sans-serif-light"
+                            />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/loginID"
+                        android:layout_width="100dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/password"
+                        android:enabled="true"
+                        android:text="Go"
+                        android:textAllCaps="false"
+                        android:textColor="#000000"
+                        android:textSize="15sp" />
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+
+
     </LinearLayout>
 
 
+    <!-- layout for main menus -->
     <LinearLayout
+
         android:id="@+id/menusLayoutID"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -376,21 +393,6 @@
 
 
         </LinearLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

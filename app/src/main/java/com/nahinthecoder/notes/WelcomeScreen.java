@@ -17,6 +17,7 @@ public class WelcomeScreen extends AppCompatActivity {
     TextView text;
     TextView des;
     LinearLayout textLinear;
+    LinearLayout first;
 
     private static int SPLASH_SCREEN_TIME_OUT = 4000;
     @Override
@@ -29,7 +30,7 @@ public class WelcomeScreen extends AppCompatActivity {
 
         des = (TextView)findViewById(R.id.textID);
         textLinear = (LinearLayout)findViewById(R.id.textLinearID);
-
+        first = (LinearLayout)findViewById(R.id.firstID);
         /** hiding title bar  and action bar starts **/
 
         /** hiding title bar  and action bar ends **/
@@ -46,6 +47,7 @@ public class WelcomeScreen extends AppCompatActivity {
 
 
         text.startAnimation(myanimation2);
+        first.startAnimation(myanimation2);
         /** Animation Code Ends **/
         textLinear.startAnimation(myanimation1);
 
