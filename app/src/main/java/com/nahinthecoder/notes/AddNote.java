@@ -189,6 +189,9 @@ public class AddNote extends AppCompatActivity {
                             {
                                 Toast.makeText(AddNote.this, "Topic length is too short !", Toast.LENGTH_LONG).show();
                                 topic.setBackground(getDrawable(R.drawable.edit_text_background));
+                                scrollView.setBackground(getDrawable(R.drawable.addnotes_ui));
+                                //dateTimeLinearLayout.setBackground(getDrawable(R.drawable.addnotes_ui));
+                                note.setBackground(getDrawable(R.drawable.addnotes_ui));
 
                             }
 
