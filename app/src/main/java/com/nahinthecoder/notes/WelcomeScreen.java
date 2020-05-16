@@ -1,10 +1,14 @@
 package com.nahinthecoder.notes;
 
+import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -18,7 +22,10 @@ public class WelcomeScreen extends AppCompatActivity {
     TextView des;
     LinearLayout textLinear;
     LinearLayout first;
-
+    String userName;
+    TextView welcomeText;
+    TextView nameText;
+    View lineView;
     private static int SPLASH_SCREEN_TIME_OUT = 4000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,11 +43,29 @@ public class WelcomeScreen extends AppCompatActivity {
         /** hiding title bar  and action bar ends **/
 
 
+
+        welcomeText = (TextView)findViewById(R.id.welcomeTextID);
+        nameText = (TextView)findViewById(R.id.welcomeNameID);
+        lineView = (View)findViewById(R.id.lineViewID);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("userName", Context.MODE_PRIVATE);
+        if(sharedPreferences.contains("userName"))
+        {
+            lineView.setVisibility(View.VISIBLE);
+            welcomeText.setVisibility(View.VISIBLE);
+            userName = sharedPreferences.getString("userName","Unknown");
+            welcomeText.setText(getResources().getString(R.string.welcome));
+            nameText.setText(userName);
+
+        }
+
+
+
         /**code for animation starts **/
 
 
         text = (TextView)findViewById(R.id.textMS);
-       // img =(ImageView)findViewById(R.id.img);
+        // img =(ImageView)findViewById(R.id.img);
 
         Animation myanimation1 = AnimationUtils.loadAnimation(this,R.anim.myanim);
         Animation myanimation2 = AnimationUtils.loadAnimation(this,R.anim.myanim2);

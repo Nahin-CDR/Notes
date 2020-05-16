@@ -60,7 +60,7 @@ public class AddData {
     @Override
     public String toString(){
         return  "\n"
-                +Date+"     "+Time+"\n"
+                +Date+"     "+Time+"\n\n"
                 +Topic+"\n"+
                 "\n\n"+Note+"\n";
         //   Animation animation = AnimationUtils.loadAnimation(Context,R.anim.chatting);

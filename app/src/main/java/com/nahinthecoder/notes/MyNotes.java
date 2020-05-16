@@ -42,6 +42,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Objects;
 
 public class MyNotes extends AppCompatActivity {
 
@@ -72,7 +73,7 @@ public class MyNotes extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_notes);
-        getSupportActionBar().hide();
+        Objects.requireNonNull(getSupportActionBar()).hide();
         listView = (ListView)findViewById( R.id.list_itemViewID );
 
         linearLayout_loading_layout = (LinearLayout)findViewById(R.id.loading_layoutID);
@@ -571,7 +572,7 @@ public class MyNotes extends AppCompatActivity {
             }
         });
 
-        if (isNetworkConnected()!=true)
+        if (!isNetworkConnected())
         {
             linearLayout_loading_layout.setVisibility(View.GONE);
             Toast.makeText(this, "No Internet !", Toast.LENGTH_SHORT).show();
@@ -625,6 +626,7 @@ public class MyNotes extends AppCompatActivity {
 
     private boolean isNetworkConnected(){
         ConnectivityManager cm = (ConnectivityManager) getSystemService(MyNotes.CONNECTIVITY_SERVICE);
+        assert cm != null;
         return cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnected();
     }
     

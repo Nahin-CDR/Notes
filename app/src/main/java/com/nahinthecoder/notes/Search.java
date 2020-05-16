@@ -35,6 +35,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Objects;
 
 public class Search extends AppCompatActivity {
 
@@ -64,7 +65,7 @@ public class Search extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-        getSupportActionBar().hide();
+        Objects.requireNonNull(getSupportActionBar()).hide();
 
 
 
@@ -150,7 +151,7 @@ public class Search extends AppCompatActivity {
 
                 if (myInput.getText().toString().length() != 0)
                 {
-                    if(isNetworkConnected()==true)
+                    if(isNetworkConnected())
                     {
                         displayBackgroundLayout.setBackground(getDrawable(R.drawable.addnotes_ui));
                         listView.setVisibility(View.GONE);
@@ -213,7 +214,8 @@ public class Search extends AppCompatActivity {
 
                        for (DataSnapshot itemSnapshot : dataSnapshot.getChildren()){
                            AddData addData = itemSnapshot.getValue(AddData.class);
-                            String mydate = addData.getDate();
+                           assert addData != null;
+                           String mydate = addData.getDate();
                             String mytime = addData.getTime();
                             String mytopic = addData.getTopic();
                             String mynote = addData.getNote();
@@ -255,6 +257,7 @@ public class Search extends AppCompatActivity {
     private boolean isNetworkConnected(){
         ConnectivityManager cm = (ConnectivityManager) getSystemService(MainActivity.CONNECTIVITY_SERVICE);
 
+        assert cm != null;
         return cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnected();
     }
 }

@@ -51,6 +51,7 @@
                     android:id="@+id/del_search_byId"
                     android:inputType="text"
                     android:padding="12dp"
+                    android:maxLength="25"
                     android:fontFamily="sans-serif-light"
                     android:background="@drawable/defult_button"
                     android:hint="Enter Topic Name"

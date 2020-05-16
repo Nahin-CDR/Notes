@@ -14,6 +14,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.Objects;
+
 public class Home extends AppCompatActivity {
 
     EditText userID,userPass;
@@ -24,7 +26,7 @@ public class Home extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        getSupportActionBar().hide();
+        Objects.requireNonNull(getSupportActionBar()).hide();
 
         userID = (EditText)findViewById(R.id.userNameID);
         userPass = (EditText)findViewById(R.id.passwordID);

@@ -13,6 +13,8 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Objects;
+
 public class Themes extends AppCompatActivity {
     ImageButton theme1Button,theme2Button,theme3Button,theme4Button;
     ImageButton theme5Button,theme6Button,theme7Button,theme8Button;
@@ -24,7 +26,7 @@ public class Themes extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_themes);
-        getSupportActionBar().hide();
+        Objects.requireNonNull(getSupportActionBar()).hide();
 
 
         theme1Button = findViewById(R.id.theme1_ID);
@@ -32,13 +34,13 @@ public class Themes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(isNetworkConnected()==true)
+                if(isNetworkConnected())
                 {
                     themeNO = "0";
                     SharedPreferences sharedPreferences = getSharedPreferences( "themeNo", Context.MODE_PRIVATE );
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString( "themeNo",themeNO );
-                    editor.commit();
+                    editor.apply();
 
                     Intent intent = new Intent(getApplicationContext(),MyNotes.class);
                     startActivity(intent);
@@ -59,13 +61,13 @@ public class Themes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(isNetworkConnected()==true)
+                if(isNetworkConnected())
                 {
                     themeNO = "1";
                     SharedPreferences sharedPreferences = getSharedPreferences( "themeNo", Context.MODE_PRIVATE );
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString( "themeNo",themeNO );
-                    editor.commit();
+                    editor.apply();
 
                     Intent intent = new Intent(getApplicationContext(),MyNotes.class);
                     startActivity(intent);
@@ -87,13 +89,13 @@ public class Themes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(isNetworkConnected()==true)
+                if(isNetworkConnected())
                 {
                     themeNO = "2";
                     SharedPreferences sharedPreferences = getSharedPreferences( "themeNo", Context.MODE_PRIVATE );
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString( "themeNo",themeNO );
-                    editor.commit();
+                    editor.apply();
 
                     Intent intent = new Intent(getApplicationContext(),MyNotes.class);
                     startActivity(intent);
@@ -113,13 +115,13 @@ public class Themes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(isNetworkConnected()==true)
+                if(isNetworkConnected())
                 {
                     themeNO = "3";
                     SharedPreferences sharedPreferences = getSharedPreferences( "themeNo", Context.MODE_PRIVATE );
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString( "themeNo",themeNO );
-                    editor.commit();
+                    editor.apply();
 
                     Intent intent = new Intent(getApplicationContext(),MyNotes.class);
                     startActivity(intent);
@@ -139,13 +141,13 @@ public class Themes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(isNetworkConnected()==true)
+                if(isNetworkConnected())
                 {
                     themeNO = "4";
                     SharedPreferences sharedPreferences = getSharedPreferences( "themeNo", Context.MODE_PRIVATE );
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString( "themeNo",themeNO );
-                    editor.commit();
+                    editor.apply();
 
                     Intent intent = new Intent(getApplicationContext(),MyNotes.class);
                     startActivity(intent);
@@ -165,13 +167,13 @@ public class Themes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(isNetworkConnected()==true)
+                if(isNetworkConnected())
                 {
                     themeNO = "5";
                     SharedPreferences sharedPreferences = getSharedPreferences( "themeNo", Context.MODE_PRIVATE );
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString( "themeNo",themeNO );
-                    editor.commit();
+                    editor.apply();
 
                     Intent intent = new Intent(getApplicationContext(),MyNotes.class);
                     startActivity(intent);
@@ -192,13 +194,13 @@ public class Themes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(isNetworkConnected()==true)
+                if(isNetworkConnected())
                 {
                     themeNO = "6";
                     SharedPreferences sharedPreferences = getSharedPreferences( "themeNo", Context.MODE_PRIVATE );
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString( "themeNo",themeNO );
-                    editor.commit();
+                    editor.apply();
 
                     Intent intent = new Intent(getApplicationContext(),MyNotes.class);
                     startActivity(intent);
@@ -219,13 +221,13 @@ public class Themes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(isNetworkConnected()==true)
+                if(isNetworkConnected())
                 {
                     themeNO = "7";
                     SharedPreferences sharedPreferences = getSharedPreferences( "themeNo", Context.MODE_PRIVATE );
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString( "themeNo",themeNO );
-                    editor.commit();
+                    editor.apply();
 
                     Intent intent = new Intent(getApplicationContext(),MyNotes.class);
                     startActivity(intent);
@@ -246,13 +248,13 @@ public class Themes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(isNetworkConnected()==true)
+                if(isNetworkConnected())
                 {
                     themeNO = "8";
                     SharedPreferences sharedPreferences = getSharedPreferences( "themeNo", Context.MODE_PRIVATE );
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString( "themeNo",themeNO );
-                    editor.commit();
+                    editor.apply();
 
                     Intent intent = new Intent(getApplicationContext(),MyNotes.class);
                     startActivity(intent);
@@ -274,13 +276,13 @@ public class Themes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(isNetworkConnected()==true)
+                if(isNetworkConnected())
                 {
                     themeNO = "9";
                     SharedPreferences sharedPreferences = getSharedPreferences( "themeNo", Context.MODE_PRIVATE );
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString( "themeNo",themeNO );
-                    editor.commit();
+                    editor.apply();
 
                     Intent intent = new Intent(getApplicationContext(),MyNotes.class);
                     startActivity(intent);
@@ -302,13 +304,13 @@ public class Themes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(isNetworkConnected()==true)
+                if(isNetworkConnected())
                 {
                     themeNO = "10";
                     SharedPreferences sharedPreferences = getSharedPreferences( "themeNo", Context.MODE_PRIVATE );
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString( "themeNo",themeNO );
-                    editor.commit();
+                    editor.apply();
 
                     Intent intent = new Intent(getApplicationContext(),MyNotes.class);
                     startActivity(intent);
@@ -331,13 +333,13 @@ public class Themes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if(isNetworkConnected()==true)
+                if(isNetworkConnected())
                 {
                     themeNO = "11";
                     SharedPreferences sharedPreferences = getSharedPreferences( "themeNo", Context.MODE_PRIVATE );
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putString( "themeNo",themeNO );
-                    editor.commit();
+                    editor.apply();
 
                     Intent intent = new Intent(getApplicationContext(),MyNotes.class);
                     startActivity(intent);
@@ -354,32 +356,11 @@ public class Themes extends AppCompatActivity {
         });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 
     private boolean isNetworkConnected(){
         ConnectivityManager cm = (ConnectivityManager) getSystemService(MyNotes.CONNECTIVITY_SERVICE);
+        assert cm != null;
         return cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnected();
     }
 }

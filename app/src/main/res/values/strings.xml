@@ -20,4 +20,8 @@ Because they have to need your personal mobile number and verify to log in your 
 >>All are secured with master password\n
 Because When you set your profile you have to set a master password that will protect your notes form un authorised access of people
     </string>
+
+    <string name="welcome">
+        Welcome back
+    </string>
 </resources>

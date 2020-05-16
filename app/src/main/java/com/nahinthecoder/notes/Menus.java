@@ -24,6 +24,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Objects;
+
 public class Menus extends AppCompatActivity {
 
     ImageButton addNoteButton,myNotesButton,searchButton,deleteButton;
@@ -39,7 +41,7 @@ public class Menus extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menus);
-        getSupportActionBar().hide();
+        Objects.requireNonNull(getSupportActionBar()).hide();
 
 
 
@@ -71,7 +73,7 @@ public class Menus extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (isNetworkConnected()==true)
+                if (isNetworkConnected())
                 {
                     Intent intent = new Intent(Intent.ACTION_VIEW);
                     intent.setData(Uri.parse(
@@ -133,7 +135,7 @@ public class Menus extends AppCompatActivity {
            addNoteButton.setOnClickListener(new View.OnClickListener() {
                @Override
                public void onClick(View v) {
-                   if (isNetworkConnected()==true)
+                   if (isNetworkConnected())
                    {
                        Intent intent = new Intent(getApplicationContext(),AddNote.class);
                        startActivity(intent);
@@ -152,7 +154,7 @@ public class Menus extends AppCompatActivity {
            myNotesButton.setOnClickListener(new View.OnClickListener() {
                @Override
                public void onClick(View v) {
-                   if (isNetworkConnected()==true)
+                   if (isNetworkConnected())
                    {
                        Intent intent = new Intent(getApplicationContext(),Themes.class);
                        startActivity(intent);
@@ -171,7 +173,7 @@ public class Menus extends AppCompatActivity {
            searchButton.setOnClickListener(new View.OnClickListener() {
                @Override
                public void onClick(View v) {
-                   if(isNetworkConnected()==true)
+                   if(isNetworkConnected())
                    {
                        Intent intent = new Intent(getApplicationContext(),Search.class);
                        startActivity(intent);
@@ -189,7 +191,7 @@ public class Menus extends AppCompatActivity {
            deleteButton.setOnClickListener(new View.OnClickListener() {
                @Override
                public void onClick(View v) {
-                   if (isNetworkConnected()==true)
+                   if (isNetworkConnected())
                    {
                        Intent intent = new Intent(getApplicationContext(),Delete.class);
                        startActivity(intent);
@@ -210,6 +212,7 @@ public class Menus extends AppCompatActivity {
 
     private boolean isNetworkConnected(){
         ConnectivityManager cm = (ConnectivityManager) getSystemService(MyNotes.CONNECTIVITY_SERVICE);
+        assert cm != null;
         return cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnected();
     }
 

@@ -22,6 +22,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Objects;
+
 public class Delete extends AppCompatActivity {
     EditText deleteText;
     TextView deleteName;
@@ -35,7 +37,7 @@ public class Delete extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delete);
-        getSupportActionBar().hide();
+        Objects.requireNonNull(getSupportActionBar()).hide();
         deleteText = findViewById(R.id.del_search_byId);
         deleteName = findViewById(R.id.del_preview_nameId);
 
@@ -61,7 +63,7 @@ public class Delete extends AppCompatActivity {
             public void onClick(View v) {
                 String inputTopic= deleteText.getText().toString().trim();
                 if (!inputTopic.equals(null) && inputTopic.length()!=0){
-                    if(isNetworkConnected()==true){
+                    if(isNetworkConnected()){
                         linearLayout_loading.setVisibility( View.VISIBLE );
                         deleteBackGround.setBackground(getDrawable(R.drawable.defult_button));
                         findData();
@@ -148,6 +150,7 @@ public class Delete extends AppCompatActivity {
     private boolean isNetworkConnected(){
         ConnectivityManager cm = (ConnectivityManager) getSystemService(MainActivity.CONNECTIVITY_SERVICE);
 
+        assert cm != null;
         return cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnected();
     }
 

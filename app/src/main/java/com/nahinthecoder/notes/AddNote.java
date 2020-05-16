@@ -28,6 +28,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Objects;
 
 public class AddNote extends AppCompatActivity {
 
@@ -53,7 +54,7 @@ public class AddNote extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_note);
-        getSupportActionBar().hide();
+        Objects.requireNonNull(getSupportActionBar()).hide();
 
 
         updateprofile();
@@ -156,7 +157,7 @@ public class AddNote extends AppCompatActivity {
                  if(!TextUtils.isEmpty(user_topic) && !TextUtils.isEmpty(user_note) && !TextUtils.isEmpty(current_date) && current_date.length()!=0)
                 {
 
-                    if(isNetworkConnected()==true){
+                    if(isNetworkConnected()){
 
                         if(user_topic.contains(".") || user_topic.contains("/") || user_topic.contains("#") || user_topic.contains("&") ||
                                 user_topic.contains("%") || user_topic.contains("₩") || user_topic.contains("@") || user_topic.contains("$") ||
@@ -224,6 +225,7 @@ public class AddNote extends AppCompatActivity {
     private boolean isNetworkConnected(){
         ConnectivityManager cm = (ConnectivityManager) getSystemService(MainActivity.CONNECTIVITY_SERVICE);
 
-         return cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnected();
+        assert cm != null;
+        return cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnected();
     }
 }
