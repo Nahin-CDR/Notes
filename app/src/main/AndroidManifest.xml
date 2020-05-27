@@ -13,18 +13,38 @@
         android:roundIcon="@drawable/icn"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".SearchOption"></activity>
+        <activity android:name=".SearchbyTopic" />
         <activity
-            android:name=".MainActivity" android:screenOrientation="locked"/>
-        <activity android:name=".Themes" android:screenOrientation="locked"/>
-        <activity android:name=".Delete" android:screenOrientation="locked"/>
-        <activity android:name=".Search" android:screenOrientation="locked"/>
-        <activity android:name=".MyNotes" android:screenOrientation="locked"/>
-        <activity android:name=".AddNote" android:screenOrientation="locked"/>
-        <activity android:name=".Menus"  android:screenOrientation="locked"/>
-        <activity android:name=".OTPActivity" android:screenOrientation="locked" />
-        <activity android:name=".Home" android:screenOrientation="locked"/>
-
-            <activity android:name=".WelcomeScreen" android:screenOrientation="locked">
+            android:name=".MainActivity"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".Themes"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".Delete"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".Search"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".MyNotes"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".AddNote"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".Menus"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".OTPActivity"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".Home"
+            android:screenOrientation="locked" />
+        <activity
+            android:name=".WelcomeScreen"
+            android:screenOrientation="locked">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

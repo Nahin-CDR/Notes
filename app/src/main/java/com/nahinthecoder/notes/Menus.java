@@ -16,6 +16,7 @@ import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.TranslateAnimation;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -37,6 +38,9 @@ public class Menus extends AppCompatActivity {
     Button login;
     String myPassWord;
     Button googlePlay;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,6 +102,12 @@ public class Menus extends AppCompatActivity {
 
 
         MenuLayout();
+
+
+
+
+
+
 
         menusLayout = (LinearLayout)findViewById(R.id.menusLayoutID);
         login = (Button)findViewById(R.id.loginID);
@@ -175,7 +185,8 @@ public class Menus extends AppCompatActivity {
                public void onClick(View v) {
                    if(isNetworkConnected())
                    {
-                       Intent intent = new Intent(getApplicationContext(),Search.class);
+
+                       Intent intent = new Intent(getApplicationContext(),SearchOption.class);
                        startActivity(intent);
                        overridePendingTransition(R.anim.slider_1,R.anim.slider_2);
                    }
@@ -215,5 +226,25 @@ public class Menus extends AppCompatActivity {
         assert cm != null;
         return cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnected();
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }
