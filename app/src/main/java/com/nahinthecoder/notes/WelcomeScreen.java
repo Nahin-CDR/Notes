@@ -28,6 +28,7 @@ public class WelcomeScreen extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTheme(R.style.AppTheme);
         setContentView(R.layout.activity_welcome_screen);
 
         Objects.requireNonNull(getSupportActionBar()).hide();
@@ -45,12 +46,11 @@ public class WelcomeScreen extends AppCompatActivity {
 
 
 
+
     }
 
     @Override
     protected void onStart() {
-
-
 
 
         super.onStart();
@@ -58,15 +58,14 @@ public class WelcomeScreen extends AppCompatActivity {
             @Override
             public void run() {
 
-                     Intent intent = new Intent(WelcomeScreen.this, MainActivity.class);
-                     startActivity(intent);
-                     overridePendingTransition(R.anim.slider_1, R.anim.slider_2);
-                     finish();
+                Intent intent = new Intent(WelcomeScreen.this, MainActivity.class);
+                startActivity(intent);
+                overridePendingTransition(R.anim.slider_1, R.anim.slider_2);
+                finish();
 
 
             }
-        }, 4000);
-
+        }, 3000);
 
     }
 }

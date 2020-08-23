@@ -13,9 +13,9 @@
         android:roundIcon="@drawable/icn"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SearchOption"
-            android:screenOrientation="locked"
-            ></activity>
+        <activity
+            android:name=".SearchOption"
+            android:screenOrientation="locked" />
         <activity android:name=".SearchbyTopic"
             android:screenOrientation="locked"
             />
@@ -48,7 +48,9 @@
             android:screenOrientation="locked" />
         <activity
             android:name=".WelcomeScreen"
-            android:screenOrientation="locked">
+            android:screenOrientation="locked"
+            android:theme="@style/AppTheme"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
