@@ -13,8 +13,12 @@
         android:roundIcon="@drawable/icn"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SearchOption"></activity>
-        <activity android:name=".SearchbyTopic" />
+        <activity android:name=".SearchOption"
+            android:screenOrientation="locked"
+            ></activity>
+        <activity android:name=".SearchbyTopic"
+            android:screenOrientation="locked"
+            />
         <activity
             android:name=".MainActivity"
             android:screenOrientation="locked" />

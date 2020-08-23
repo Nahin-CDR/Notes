@@ -5,103 +5,90 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="5dp"
-    android:background="@drawable/note_effect"
+    android:background="#FFFFFF"
+    android:weightSum="2"
     tools:context=".WelcomeScreen">
 
-    <TextView
-        android:textColor="#E31506"
-        android:textSize="45sp"
-        android:fontFamily="cursive"
-        android:layout_gravity="center"
-        android:id="@+id/textMS"
-        android:gravity="center"
-        android:text="Notebook Pro"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
 
-    <LinearLayout
-        android:id="@+id/firstID"
-        android:background="@drawable/note_effect"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
+
+
+
 
         <LinearLayout
-            android:id="@+id/textLinearID"
-            android:orientation="vertical"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/note_effect"
+            android:layout_weight="1"
+            android:background="@color/white"
             android:layout_width="match_parent"
-            android:gravity="center"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_gravity="bottom"
+            android:gravity="bottom"
+            android:orientation="vertical">
 
-            <TextView
-                android:textSize="15sp"
-                android:fontFamily="sans-serif-condensed"
-                android:id="@+id/welcomeTextID"
-                android:textAlignment="center"
+            <LinearLayout
+
+                android:layout_margin="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text=""
-                />
-            <TextView
-                android:layout_marginTop="5dp"
-                android:textColor="#882D26"
-                android:textSize="40sp"
-                android:fontFamily="cursive"
-                android:id="@+id/welcomeNameID"
-                android:textAlignment="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text=""
-                />
-            <View
-                android:visibility="gone"
-                android:id="@+id/lineViewID"
-                android:layout_marginTop="20dp"
-                android:textAlignment="center"
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/white"
-                />
-            <TextView
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <pl.droidsonroids.gif.GifImageView
+                    android:layout_gravity="center"
+                    android:layout_width="160dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/kaspia"
+                    />
+                <pl.droidsonroids.gif.GifImageView
+                    android:layout_gravity="center"
+                    android:layout_width="100dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/magi2"
+                    />
 
-                android:id="@+id/textID"
-                android:gravity="center"
-                android:layout_gravity="center"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="serif-monospace"
-                android:textSize="15sp"
-                android:text="keep your words alive !"/>
+            </LinearLayout>
 
 
 
+                <TextView
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Keep Your words Alive!"
+                    android:textAlignment="center"
+                    android:textColor="#FF5722"
 
-
-
-
-
+                    />
 
 
         </LinearLayout>
 
-    </LinearLayout>
+        <LinearLayout
+            android:layout_weight="1"
+            android:gravity="bottom"
+            android:orientation="vertical"
+            android:layout_gravity="bottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <!--
-    <ImageView
-        android:layout_margin="20dp"
-        android:layout_below="@+id/textMS"
-        android:layout_marginTop="10dp"
-        android:id="@+id/img"
-        android:src="@drawable/icn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-    />
-    -->
+                <TextView
+                    android:id="@+id/welcomeNameID"
+                    android:layout_marginBottom="20dp"
+                    android:textColor="#2196F3"
+                    android:textAlignment="center"
+                    android:gravity="bottom"
+                    android:textSize="15sp"
+                    android:fontFamily="sans-serif"
+                    android:layout_gravity="bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="App from: Nahin the Coder"
+                    tools:ignore="RtlCompat" />
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
 </LinearLayout>

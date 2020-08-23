@@ -152,4 +152,12 @@ public class Home extends AppCompatActivity {
 
 
     }
+
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slider_1,R.anim.slider_2);
+        finish();
+    }
 }

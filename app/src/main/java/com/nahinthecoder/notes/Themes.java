@@ -1,6 +1,7 @@
 package com.nahinthecoder.notes;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,9 +17,9 @@ import android.widget.Toast;
 import java.util.Objects;
 
 public class Themes extends AppCompatActivity {
-    ImageButton theme1Button,theme2Button,theme3Button,theme4Button;
-    ImageButton theme5Button,theme6Button,theme7Button,theme8Button;
-    ImageButton theme9Button,theme10Button,theme11Button,theme12Button;
+    CardView theme1Button,theme2Button,theme3Button,theme4Button;
+    CardView theme5Button,theme6Button,theme7Button,theme8Button;
+    CardView theme9Button,theme10Button,theme11Button,theme12Button;
 
     String themeNO;
 
@@ -362,5 +363,13 @@ public class Themes extends AppCompatActivity {
         ConnectivityManager cm = (ConnectivityManager) getSystemService(MyNotes.CONNECTIVITY_SERVICE);
         assert cm != null;
         return cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnected();
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slider_1,R.anim.slider_2);
+        finish();
     }
 }

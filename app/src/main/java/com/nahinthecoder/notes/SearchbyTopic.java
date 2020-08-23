@@ -233,4 +233,12 @@ public class SearchbyTopic extends AppCompatActivity {
         assert cm != null;
         return cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isConnected();
     }
+
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slider_1,R.anim.slider_2);
+        finish();
+    }
 }
